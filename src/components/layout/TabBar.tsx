@@ -35,15 +35,21 @@ const createStyles = (colors: AppPalette) =>
   StyleSheet.create({
     wrap: {
       gap: 8,
-      paddingBottom: 4,
-    },
-    tab: {
-      minHeight: 40,
-      paddingHorizontal: 12,
+      paddingHorizontal: 10,
+      paddingVertical: 8,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.surface,
+      backgroundColor: colors.mode === 'dark' ? 'rgba(14, 20, 44, 0.94)' : 'rgba(255, 255, 255, 0.92)',
+    },
+    tab: {
+      minHeight: 42,
+      minWidth: 42,
+      paddingHorizontal: 11,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: 'transparent',
+      backgroundColor: 'transparent',
       flexDirection: 'row',
       alignItems: 'center',
       gap: 7,
@@ -51,6 +57,10 @@ const createStyles = (colors: AppPalette) =>
     activeTab: {
       backgroundColor: colors.accent,
       borderColor: colors.accent,
+      shadowColor: colors.glow,
+      shadowOpacity: 1,
+      shadowRadius: 16,
+      shadowOffset: { width: 0, height: 8 },
     },
     label: {
       color: colors.textSoft,

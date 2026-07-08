@@ -31,9 +31,9 @@ export function PaymentList({ colors, items }: PaymentListProps) {
 const createStyles = (colors: AppPalette) =>
   StyleSheet.create({
     row: {
-      minHeight: 64,
+      minHeight: 54,
       paddingHorizontal: 13,
-      paddingVertical: 10,
+      paddingVertical: 8,
       flexDirection: 'row',
       alignItems: 'center',
       gap: 11,

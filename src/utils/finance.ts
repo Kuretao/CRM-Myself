@@ -7,17 +7,28 @@ export const calculateTotals = (transactions: Transaction[], planned: PlannedPay
   const fixedExpenses = transactions
     .filter((item) => item.type === 'expense')
     .reduce((sum, item) => sum + item.amount, 0);
-  const plannedMin = planned.reduce((sum, item) => sum + item.amountMin, 0);
-  const plannedMax = planned.reduce((sum, item) => sum + item.amountMax, 0);
+  const activePlanned = planned.filter((item) => item.status === 'planned');
+  const plannedExpenseMin = activePlanned
+    .filter((item) => item.type === 'expense')
+    .reduce((sum, item) => sum + item.amountMin, 0);
+  const plannedExpenseMax = activePlanned
+    .filter((item) => item.type === 'expense')
+    .reduce((sum, item) => sum + item.amountMax, 0);
+  const plannedIncomeMin = activePlanned
+    .filter((item) => item.type === 'income')
+    .reduce((sum, item) => sum + item.amountMin, 0);
+  const plannedIncomeMax = activePlanned
+    .filter((item) => item.type === 'income')
+    .reduce((sum, item) => sum + item.amountMax, 0);
   const doneTasks = tasks.filter((item) => item.status === 'done').length;
 
   return {
     income,
     fixedExpenses,
-    plannedMin,
-    plannedMax,
-    leftMin: income - fixedExpenses - plannedMax,
-    leftMax: income - fixedExpenses - plannedMin,
+    plannedMin: plannedExpenseMin - plannedIncomeMax,
+    plannedMax: plannedExpenseMax - plannedIncomeMin,
+    leftMin: income + plannedIncomeMin - fixedExpenses - plannedExpenseMax,
+    leftMax: income + plannedIncomeMax - fixedExpenses - plannedExpenseMin,
     doneTasks,
     taskProgress: tasks.length ? Math.round((doneTasks / tasks.length) * 100) : 0,
   };
@@ -26,7 +37,7 @@ export const calculateTotals = (transactions: Transaction[], planned: PlannedPay
 export const groupExpensesByCategory = (transactions: Transaction[], planned: PlannedPayment[]) => {
   const rows = [
     ...transactions.filter((item) => item.type === 'expense'),
-    ...planned.map((item) => ({
+    ...planned.filter((item) => item.type === 'expense' && item.status === 'planned').map((item) => ({
       id: item.id,
       title: item.title,
       amount: (item.amountMin + item.amountMax) / 2,

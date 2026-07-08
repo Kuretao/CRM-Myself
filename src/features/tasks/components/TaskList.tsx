@@ -38,7 +38,7 @@ export function TaskList({ colors, items, onToggle }: TaskListProps) {
           </View>
           <View style={styles.copy}>
             <Text style={[styles.title, item.status === 'done' && styles.doneTitle]}>{item.title}</Text>
-            <Text style={styles.meta}>{item.due} · {item.tag}</Text>
+            <Text style={styles.meta}>{item.due}{item.time ? ` · ${item.time}` : ''} · {item.tag}</Text>
           </View>
           <Text style={[styles.status, item.status === 'progress' && styles.progress, item.status === 'done' && styles.done]}>
             {statusLabel[item.status]}

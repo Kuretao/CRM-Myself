@@ -28,21 +28,21 @@ const styles = (colors: AppPalette) =>
   StyleSheet.create({
     title: {
       color: colors.text,
-      fontSize: 28,
-      lineHeight: 34,
+      fontSize: 24,
+      lineHeight: 29,
       fontWeight: '900',
       letterSpacing: 0,
     },
     body: {
       color: colors.text,
-      fontSize: 15,
-      lineHeight: 21,
+      fontSize: 14,
+      lineHeight: 20,
       letterSpacing: 0,
     },
     muted: {
       color: colors.textSoft,
-      fontSize: 13,
-      lineHeight: 18,
+      fontSize: 12,
+      lineHeight: 17,
       letterSpacing: 0,
     },
     kicker: {

@@ -9,19 +9,24 @@ export const buildCashflowSeries = (transactions: Transaction[], planned: Planne
     .filter((item) => item.type === 'expense')
     .reduce((sum, item) => sum + item.amount, 0);
 
-  const requiredPlan = planned
-    .filter((item) => item.stage === 'required')
+  const activePlanned = planned.filter((item) => item.status === 'planned');
+  const plannedIncome = activePlanned
+    .filter((item) => item.type === 'income')
+    .reduce((sum, item) => sum + item.amountMax, 0);
+  const requiredPlan = activePlanned
+    .filter((item) => item.type === 'expense' && item.stage === 'required')
     .reduce((sum, item) => sum + item.amountMax, 0);
 
-  const reservePlan = planned
-    .filter((item) => item.stage === 'reserve')
+  const reservePlan = activePlanned
+    .filter((item) => item.type === 'expense' && item.stage === 'reserve')
     .reduce((sum, item) => sum + item.amountMax, 0);
 
   return [
     { label: 'Банк', value: income },
     { label: 'Факт', value: income - paidExpenses },
-    { label: 'Обяз.', value: income - paidExpenses - requiredPlan },
-    { label: 'Резерв', value: income - paidExpenses - requiredPlan - reservePlan },
+    { label: 'План+', value: income + plannedIncome - paidExpenses },
+    { label: 'Обяз.', value: income + plannedIncome - paidExpenses - requiredPlan },
+    { label: 'Резерв', value: income + plannedIncome - paidExpenses - requiredPlan - reservePlan },
   ];
 };
 
@@ -32,30 +37,35 @@ export const buildScenarioRows = (transactions: Transaction[], planned: PlannedP
   const fixedExpenses = transactions
     .filter((item) => item.type === 'expense')
     .reduce((sum, item) => sum + item.amount, 0);
-  const requiredMax = planned
-    .filter((item) => item.stage === 'required')
+  const activePlanned = planned.filter((item) => item.status === 'planned');
+  const plannedIncomeMax = activePlanned
+    .filter((item) => item.type === 'income')
     .reduce((sum, item) => sum + item.amountMax, 0);
-  const reserveMax = planned
-    .filter((item) => item.stage === 'reserve')
+  const requiredMax = activePlanned
+    .filter((item) => item.type === 'expense' && item.stage === 'required')
     .reduce((sum, item) => sum + item.amountMax, 0);
+  const reserveMax = activePlanned
+    .filter((item) => item.type === 'expense' && item.stage === 'reserve')
+    .reduce((sum, item) => sum + item.amountMax, 0);
+  const base = income + plannedIncomeMax - fixedExpenses;
 
   return [
     {
       title: 'Только закрытые и обязательные',
       description: 'Доп, договор, перелет, учеба, документы, общага',
-      value: income - fixedExpenses - requiredMax,
+      value: base - requiredMax,
       tone: 'green' as const,
     },
     {
       title: 'С резервом на жизнь',
       description: 'Первые 2 месяца еды, транспорта, связи и мелочей',
-      value: income - fixedExpenses - requiredMax - reserveMax,
+      value: base - requiredMax - reserveMax,
       tone: 'accent' as const,
     },
     {
       title: 'Стресс +20 000 ₽',
       description: 'Если перелет/документы выйдут дороже плана',
-      value: income - fixedExpenses - requiredMax - reserveMax - 20000,
+      value: base - requiredMax - reserveMax - 20000,
       tone: 'amber' as const,
     },
   ];

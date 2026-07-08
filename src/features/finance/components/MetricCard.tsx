@@ -26,7 +26,7 @@ const createStyles = () =>
   StyleSheet.create({
     card: {
       flex: 1,
-      minHeight: 116,
+      minHeight: 92,
       padding: 12,
       justifyContent: 'space-between',
     },
@@ -34,7 +34,7 @@ const createStyles = () =>
       alignSelf: 'flex-start',
     },
     value: {
-      fontSize: 16,
-      lineHeight: 21,
+      fontSize: 15,
+      lineHeight: 19,
     },
   });

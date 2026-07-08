@@ -1,6 +1,6 @@
 export type ThemeName = 'light' | 'dark';
 
-export type TabName = 'overview' | 'finance' | 'reports' | 'tasks' | 'profile' | 'settings';
+export type TabName = 'overview' | 'finance' | 'planning' | 'reports' | 'tasks' | 'ai' | 'profile' | 'settings';
 
 export type ReportPeriod = 'month' | 'quarter' | 'year';
 
@@ -8,11 +8,22 @@ export type MoneyType = 'income' | 'expense';
 
 export type TaskStatus = 'todo' | 'progress' | 'done';
 
+export type PlannedStatus = 'planned' | 'paid' | 'skipped';
+
+export type PlannedStage = 'required' | 'reserve' | 'flexible';
+
+export type AccountType = 'cash' | 'card' | 'savings' | 'debt';
+
+export type CategoryKind = MoneyType | 'task';
+
 export type Task = {
   id: string;
   title: string;
   due: string;
+  time?: string;
   tag: string;
+  description?: string;
+  priority?: 'low' | 'medium' | 'high';
   status: TaskStatus;
 };
 
@@ -23,16 +34,54 @@ export type Transaction = {
   type: MoneyType;
   category: string;
   date: string;
+  accountId?: string;
+  note?: string;
+  plannedItemId?: string;
 };
 
-export type PlannedPayment = {
+export type PlannedItem = {
   id: string;
   title: string;
+  type: MoneyType;
   amountMin: number;
   amountMax: number;
   due: string;
   category: string;
-  stage: 'required' | 'reserve';
+  stage: PlannedStage;
+  status: PlannedStatus;
+  note?: string;
+};
+
+export type PlannedPayment = PlannedItem;
+
+export type Account = {
+  id: string;
+  title: string;
+  type: AccountType;
+  currency: 'RUB' | 'CNY' | 'USD';
+  balance: number;
+};
+
+export type Category = {
+  id: string;
+  title: string;
+  kind: CategoryKind;
+  color: string;
+};
+
+export type AiMessage = {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  createdAt: string;
+};
+
+export type AiThread = {
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  messages: AiMessage[];
 };
 
 export type Profile = {
@@ -44,10 +93,15 @@ export type Profile = {
 };
 
 export type AppData = {
+  schemaVersion: number;
   themeName: ThemeName;
   profile: Profile;
+  accounts: Account[];
+  categories: Category[];
   tasks: Task[];
   transactions: Transaction[];
+  plannedItems: PlannedItem[];
+  aiThreads: AiThread[];
 };
 
 export type AnalyticsTotals = {

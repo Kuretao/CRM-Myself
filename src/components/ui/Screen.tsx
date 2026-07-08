@@ -21,8 +21,10 @@ export function Screen({ colors, children, scroll = true, padded = true }: Scree
       end={{ x: 1, y: 1 }}
       style={styles.gradient}
     >
-      <View style={styles.glowPrimary} />
-      <View style={styles.glowSecondary} />
+      <View style={styles.gridLineTop} />
+      <View style={styles.gridLineMid} />
+      <View style={styles.gridLineLeft} />
+      <View style={styles.gridLineRight} />
       <SafeAreaView style={styles.safe}>
         {scroll ? (
           <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
@@ -58,24 +60,36 @@ const createStyles = (colors: AppPalette) =>
       paddingHorizontal: 0,
       paddingBottom: 0,
     },
-    glowPrimary: {
+    gridLineTop: {
       position: 'absolute',
-      top: -90,
-      right: -90,
-      width: 260,
-      height: 260,
-      borderRadius: 130,
-      backgroundColor: colors.glow,
-      opacity: colors.mode === 'dark' ? 0.7 : 0.32,
+      top: 92,
+      left: 0,
+      right: 0,
+      height: 1,
+      backgroundColor: colors.border,
     },
-    glowSecondary: {
+    gridLineMid: {
       position: 'absolute',
-      top: 150,
-      left: -130,
-      width: 260,
-      height: 260,
-      borderRadius: 130,
-      backgroundColor: colors.accentSoft,
-      opacity: 0.72,
+      top: 218,
+      left: 0,
+      right: 0,
+      height: 1,
+      backgroundColor: colors.mode === 'dark' ? 'rgba(184, 200, 255, 0.06)' : 'rgba(25, 35, 67, 0.08)',
+    },
+    gridLineLeft: {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: '18%',
+      width: 1,
+      backgroundColor: colors.mode === 'dark' ? 'rgba(184, 200, 255, 0.06)' : 'rgba(25, 35, 67, 0.08)',
+    },
+    gridLineRight: {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: '22%',
+      width: 1,
+      backgroundColor: colors.mode === 'dark' ? 'rgba(184, 200, 255, 0.06)' : 'rgba(25, 35, 67, 0.08)',
     },
   });
