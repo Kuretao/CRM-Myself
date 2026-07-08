@@ -252,7 +252,15 @@ export function AppShell() {
   const page = (
     <>
       {activeTab === 'overview' && (
-        <OverviewPage colors={colors} profile={data.profile} totals={totals} planned={data.plannedItems} />
+        <OverviewPage
+          colors={colors}
+          profile={data.profile}
+          totals={totals}
+          planned={data.plannedItems}
+          aiDraft={aiDraft}
+          onChangeAiDraft={setAiDraft}
+          onSendAiDraft={sendAiDraft}
+        />
       )}
       {activeTab === 'finance' && (
         <FinancePage
