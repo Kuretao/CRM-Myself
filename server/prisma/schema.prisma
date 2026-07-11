@@ -1,0 +1,226 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum MoneyType {
+  INCOME
+  EXPENSE
+}
+
+enum PlannedStatus {
+  PLANNED
+  PAID
+  SKIPPED
+}
+
+enum PlannedStage {
+  REQUIRED
+  RESERVE
+  FLEXIBLE
+}
+
+enum AccountType {
+  CASH
+  CARD
+  SAVINGS
+  DEBT
+}
+
+enum CategoryKind {
+  INCOME
+  EXPENSE
+  TASK
+}
+
+enum DocumentStatus {
+  MISSING
+  PREPARING
+  READY
+  EXPIRED
+}
+
+enum DocumentCategory {
+  TRAVEL
+  STUDY
+  HOUSING
+  HEALTH
+  FINANCE
+}
+
+model User {
+  id           String             @id @default(cuid())
+  email        String             @unique
+  passwordHash String
+  name         String
+  destination  String             @default("Chengdu, China")
+  program      String             @default("")
+  startDate    DateTime?
+  currencyRate Decimal            @default(11.20) @db.Decimal(10, 4)
+  themeName    String             @default("dark")
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  sessions     Session[]
+  accounts     Account[]
+  categories   Category[]
+  tasks        Task[]
+  transactions Transaction[]
+  plannedItems PlannedItem[]
+  aiThreads    AiThread[]
+  documents    PersonalDocument[]
+  chinese      ChineseProgress?
+}
+
+model Session {
+  id               String   @id @default(cuid())
+  userId           String
+  refreshTokenHash String   @unique
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id        String      @id @default(cuid())
+  userId    String
+  title     String
+  type      AccountType
+  currency  String
+  balance   Decimal     @db.Decimal(14, 2)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Category {
+  id        String       @id @default(cuid())
+  userId    String
+  title     String
+  kind      CategoryKind
+  color     String
+  createdAt DateTime     @default(now())
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, title, kind])
+}
+
+model Task {
+  id          String     @id @default(cuid())
+  userId      String
+  title       String
+  due         DateTime?
+  time        String?
+  tag         String
+  description String?
+  priority    String?
+  status      TaskStatus @default(TODO)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+  @@index([userId, due])
+}
+
+model Transaction {
+  id            String    @id @default(cuid())
+  userId        String
+  title         String
+  amount        Decimal   @db.Decimal(14, 2)
+  type          MoneyType
+  category      String
+  date          DateTime
+  accountId     String?
+  note          String?
+  plannedItemId String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+}
+
+model PlannedItem {
+  id        String        @id @default(cuid())
+  userId    String
+  title     String
+  type      MoneyType
+  amountMin Decimal       @db.Decimal(14, 2)
+  amountMax Decimal       @db.Decimal(14, 2)
+  due       DateTime
+  category  String
+  stage     PlannedStage
+  status    PlannedStatus @default(PLANNED)
+  note      String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, due])
+}
+
+model AiThread {
+  id        String      @id @default(cuid())
+  userId    String
+  title     String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  AiMessage[]
+
+  @@index([userId, updatedAt])
+}
+
+model AiMessage {
+  id        String   @id @default(cuid())
+  threadId  String
+  role      String
+  content   String
+  createdAt DateTime @default(now())
+  thread    AiThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+
+  @@index([threadId, createdAt])
+}
+
+model PersonalDocument {
+  id        String           @id @default(cuid())
+  userId    String
+  title     String
+  category  DocumentCategory
+  status    DocumentStatus   @default(PREPARING)
+  expiresAt DateTime?
+  contact   String?
+  location  String?
+  note      String?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+  @@index([userId, expiresAt])
+}
+
+model ChineseProgress {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  completed String[] @default([])
+  saved     String[] @default([])
+  mastered  String[] @default([])
+  reviewed  Int      @default(0)
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

@@ -1,21 +1,29 @@
-import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text } from 'react-native';
-import type { AppPalette } from '../../theme/tokens';
+import type { ReactNode } from "react";
+import { Pressable, StyleSheet, Text } from "react-native";
+import type { AppPalette } from "../../theme/tokens";
 
 type ButtonProps = {
   colors: AppPalette;
   label: string;
   onPress: () => void;
   icon?: ReactNode;
-  variant?: 'primary' | 'ghost' | 'soft';
+  variant?: "primary" | "ghost" | "soft";
 };
 
-export function Button({ colors, label, onPress, icon, variant = 'primary' }: ButtonProps) {
+export function Button({
+  colors,
+  label,
+  onPress,
+  icon,
+  variant = "primary",
+}: ButtonProps) {
   const styles = createStyles(colors);
   return (
     <Pressable style={[styles.button, styles[variant]]} onPress={onPress}>
       {icon}
-      <Text style={[styles.label, variant !== 'primary' && styles.labelSoft]}>{label}</Text>
+      <Text style={[styles.label, variant !== "primary" && styles.labelSoft]}>
+        {label}
+      </Text>
     </Pressable>
   );
 }
@@ -23,12 +31,12 @@ export function Button({ colors, label, onPress, icon, variant = 'primary' }: Bu
 const createStyles = (colors: AppPalette) =>
   StyleSheet.create({
     button: {
-      minHeight: 46,
+      minHeight: 40,
       borderRadius: 8,
       paddingHorizontal: 14,
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'row',
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "row",
       gap: 8,
       borderWidth: 1,
     },
@@ -37,7 +45,7 @@ const createStyles = (colors: AppPalette) =>
       borderColor: colors.accent,
     },
     ghost: {
-      backgroundColor: 'transparent',
+      backgroundColor: "transparent",
       borderColor: colors.border,
     },
     soft: {
@@ -45,9 +53,9 @@ const createStyles = (colors: AppPalette) =>
       borderColor: colors.border,
     },
     label: {
-      color: '#FFFFFF',
-      fontSize: 14,
-      fontWeight: '900',
+      color: "#17130D",
+      fontSize: 12,
+      fontWeight: "900",
       letterSpacing: 0,
     },
     labelSoft: {

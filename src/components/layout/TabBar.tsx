@@ -1,7 +1,7 @@
-import { Pressable, ScrollView, StyleSheet, Text } from 'react-native';
-import { navigationItems } from '../../config/navigation';
-import type { AppPalette } from '../../theme/tokens';
-import type { TabName } from '../../types/domain';
+import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
+import { navigationItems } from "../../config/navigation";
+import type { AppPalette } from "../../theme/tokens";
+import type { TabName } from "../../types/domain";
 
 type TabBarProps = {
   colors: AppPalette;
@@ -12,7 +12,11 @@ type TabBarProps = {
 export function TabBar({ colors, activeTab, onChangeTab }: TabBarProps) {
   const styles = createStyles(colors);
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.wrap}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.wrap}
+    >
       {navigationItems.map((tab) => {
         const active = activeTab === tab.key;
         const Icon = tab.icon;
@@ -22,8 +26,10 @@ export function TabBar({ colors, activeTab, onChangeTab }: TabBarProps) {
             style={[styles.tab, active && styles.activeTab]}
             onPress={() => onChangeTab(tab.key)}
           >
-            <Icon color={active ? '#FFFFFF' : colors.textSoft} size={17} />
-            <Text style={[styles.label, active && styles.activeLabel]}>{tab.label}</Text>
+            <Icon color={active ? "#FFFFFF" : colors.textSoft} size={17} />
+            <Text style={[styles.label, active && styles.activeLabel]}>
+              {tab.label}
+            </Text>
           </Pressable>
         );
       })}
@@ -40,7 +46,10 @@ const createStyles = (colors: AppPalette) =>
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.mode === 'dark' ? 'rgba(14, 20, 44, 0.94)' : 'rgba(255, 255, 255, 0.92)',
+      backgroundColor:
+        colors.mode === "dark"
+          ? "rgba(14, 20, 44, 0.94)"
+          : "rgba(255, 255, 255, 0.92)",
     },
     tab: {
       minHeight: 42,
@@ -48,10 +57,10 @@ const createStyles = (colors: AppPalette) =>
       paddingHorizontal: 11,
       borderRadius: 8,
       borderWidth: 1,
-      borderColor: 'transparent',
-      backgroundColor: 'transparent',
-      flexDirection: 'row',
-      alignItems: 'center',
+      borderColor: "transparent",
+      backgroundColor: "transparent",
+      flexDirection: "row",
+      alignItems: "center",
       gap: 7,
     },
     activeTab: {
@@ -65,9 +74,9 @@ const createStyles = (colors: AppPalette) =>
     label: {
       color: colors.textSoft,
       fontSize: 13,
-      fontWeight: '800',
+      fontWeight: "800",
     },
     activeLabel: {
-      color: '#FFFFFF',
+      color: "#FFFFFF",
     },
   });

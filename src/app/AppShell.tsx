@@ -1,52 +1,97 @@
-import { StatusBar } from 'expo-status-bar';
-import { useEffect, useMemo, useState } from 'react';
-import { Appearance, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
-import { PIN_CODE } from '../config/app';
-import { initialData } from '../data/seed';
-import { AppHeader } from '../components/layout/AppHeader';
-import { Sidebar } from '../components/layout/Sidebar';
-import { TabBar } from '../components/layout/TabBar';
-import { Screen } from '../components/ui/Screen';
-import { AiPage } from '../pages/AiPage';
-import { LockScreen } from '../pages/LockScreen';
-import { FinancePage } from '../pages/FinancePage';
-import { OverviewPage } from '../pages/OverviewPage';
-import { PlanningPage } from '../pages/PlanningPage';
-import { ProfilePage } from '../pages/ProfilePage';
-import { ReportsPage } from '../pages/ReportsPage';
-import { SettingsPage } from '../pages/SettingsPage';
-import { TasksPage } from '../pages/TasksPage';
-import { loadAppData, saveAppData } from '../storage/appStorage';
-import { getPalette } from '../theme/tokens';
-import type { AiMessage, AppData, MoneyType, PlannedItem, TabName, Task, ThemeName, Transaction } from '../types/domain';
-import { buildCashflowSeries, buildScenarioRows, buildTaskStatusShare } from '../utils/analytics';
-import { calculateTotals, groupExpensesByCategory } from '../utils/finance';
+import { StatusBar } from "expo-status-bar";
+import { useEffect, useMemo, useState } from "react";
+import {
+  Appearance,
+  ScrollView,
+  StyleSheet,
+  View,
+  useWindowDimensions,
+} from "react-native";
+import { initialData } from "../data/seed";
+import { AppHeader } from "../components/layout/AppHeader";
+import { Sidebar } from "../components/layout/Sidebar";
+import { TabBar } from "../components/layout/TabBar";
+import { Screen } from "../components/ui/Screen";
+import { AiPage } from "../pages/AiPage";
+import { LockScreen } from "../pages/LockScreen";
+import { NotificationsPage } from "../pages/NotificationsPage";
+import { FinancePage } from "../pages/FinancePage";
+import { OverviewPage } from "../pages/OverviewPage";
+import { PlanningPage } from "../pages/PlanningPage";
+import { ProfilePage } from "../pages/ProfilePage";
+import { ReportsPage } from "../pages/ReportsPage";
+import { SettingsPage } from "../pages/SettingsPage";
+import { TasksPage } from "../pages/TasksPage";
+import { ChinesePage } from "../pages/ChinesePage";
+import { DocumentsPage } from "../pages/DocumentsPage";
+import { loadAppData, saveAppData } from "../storage/appStorage";
+import { getPalette } from "../theme/tokens";
+import type {
+  AiMessage,
+  AppData,
+  MoneyType,
+  PlannedItem,
+  TabName,
+  Task,
+  ThemeName,
+  Transaction,
+} from "../types/domain";
+import {
+  buildCashflowSeries,
+  buildScenarioRows,
+  buildTaskStatusShare,
+} from "../utils/analytics";
+import { calculateTotals, groupExpensesByCategory } from "../utils/finance";
+import {
+  clearAuthSession,
+  hasRememberedSession,
+  loadAuthAccount,
+} from "../features/auth/authStorage";
 
 export function AppShell() {
-  const systemTheme = Appearance.getColorScheme() === 'light' ? 'light' : 'dark';
-  const [data, setData] = useState<AppData>({ ...initialData, themeName: systemTheme as ThemeName });
+  const systemTheme =
+    Appearance.getColorScheme() === "light" ? "light" : "dark";
+  const [data, setData] = useState<AppData>({
+    ...initialData,
+    themeName: systemTheme as ThemeName,
+  });
   const [unlocked, setUnlocked] = useState(false);
-  const [pin, setPin] = useState('');
-  const [pinError, setPinError] = useState('');
-  const [activeTab, setActiveTab] = useState<TabName>('overview');
+  const [activeTab, setActiveTab] = useState<TabName>("overview");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [taskTitle, setTaskTitle] = useState('');
-  const [taskDue, setTaskDue] = useState('');
-  const [taskTime, setTaskTime] = useState('');
-  const [transactionTitle, setTransactionTitle] = useState('');
-  const [transactionAmount, setTransactionAmount] = useState('');
-  const [transactionType, setTransactionType] = useState<MoneyType>('expense');
-  const [plannedTitle, setPlannedTitle] = useState('');
-  const [plannedAmount, setPlannedAmount] = useState('');
-  const [plannedDue, setPlannedDue] = useState('');
-  const [plannedType, setPlannedType] = useState<MoneyType>('expense');
-  const [aiDraft, setAiDraft] = useState('');
+  const [taskTitle, setTaskTitle] = useState("");
+  const [taskDue, setTaskDue] = useState("");
+  const [taskTime, setTaskTime] = useState("");
+  const [transactionTitle, setTransactionTitle] = useState("");
+  const [transactionAmount, setTransactionAmount] = useState("");
+  const [transactionType, setTransactionType] = useState<MoneyType>("expense");
+  const [plannedTitle, setPlannedTitle] = useState("");
+  const [plannedAmount, setPlannedAmount] = useState("");
+  const [plannedDue, setPlannedDue] = useState("");
+  const [plannedType, setPlannedType] = useState<MoneyType>("expense");
+  const [aiDraft, setAiDraft] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
   const { width } = useWindowDimensions();
 
   const isDesktop = width >= 980;
   const isSidebarCollapsed = sidebarCollapsed || width < 1180;
   const colors = useMemo(() => getPalette(data.themeName), [data.themeName]);
   const styles = useMemo(() => createStyles(), []);
+
+  useEffect(() => {
+    Promise.all([hasRememberedSession(), loadAuthAccount()])
+      .then(([remembered, account]) => {
+        if (remembered && account) {
+          setUnlocked(true);
+          setData((current) => ({
+            ...current,
+            profile: { ...current.profile, name: account.name },
+          }));
+        }
+      })
+      .catch(() => undefined);
+  }, []);
 
   useEffect(() => {
     loadAppData()
@@ -57,11 +102,19 @@ export function AppShell() {
           ...saved,
           profile: { ...current.profile, ...saved.profile },
           accounts: saved.accounts?.length ? saved.accounts : current.accounts,
-          categories: saved.categories?.length ? saved.categories : current.categories,
+          categories: saved.categories?.length
+            ? saved.categories
+            : current.categories,
           tasks: saved.tasks?.length ? saved.tasks : current.tasks,
-          transactions: saved.transactions?.length ? saved.transactions : current.transactions,
-          plannedItems: saved.plannedItems?.length ? saved.plannedItems : current.plannedItems,
-          aiThreads: saved.aiThreads?.length ? saved.aiThreads : current.aiThreads,
+          transactions: saved.transactions?.length
+            ? saved.transactions
+            : current.transactions,
+          plannedItems: saved.plannedItems?.length
+            ? saved.plannedItems
+            : current.plannedItems,
+          aiThreads: saved.aiThreads?.length
+            ? saved.aiThreads
+            : current.aiThreads,
         }));
       })
       .catch(() => undefined);
@@ -91,42 +144,72 @@ export function AppShell() {
     [data.plannedItems, data.transactions],
   );
 
-  const taskShare = useMemo(() => buildTaskStatusShare(data.tasks), [data.tasks]);
+  const taskShare = useMemo(
+    () => buildTaskStatusShare(data.tasks),
+    [data.tasks],
+  );
+  const searchResults = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return [];
+    return [
+      ...data.transactions.map((item) => ({
+        id: item.id,
+        title: item.title,
+        meta: `${item.category} · ${item.date}`,
+        tab: "finance" as TabName,
+      })),
+      ...data.plannedItems.map((item) => ({
+        id: item.id,
+        title: item.title,
+        meta: `${item.category} · ${item.due}`,
+        tab: "planning" as TabName,
+      })),
+      ...data.tasks.map((item) => ({
+        id: item.id,
+        title: item.title,
+        meta: `${item.tag} · ${item.due}`,
+        tab: "tasks" as TabName,
+      })),
+    ]
+      .filter((item) =>
+        `${item.title} ${item.meta}`.toLowerCase().includes(query),
+      )
+      .slice(0, 6);
+  }, [data.plannedItems, data.tasks, data.transactions, searchQuery]);
 
-  const handlePinSubmit = () => {
-    if (pin === PIN_CODE) {
-      setUnlocked(true);
-      setPin('');
-      setPinError('');
-      return;
-    }
-    setPinError('Код не подошел');
-    setPin('');
+  const navigate = (tab: TabName) => {
+    setActiveTab(tab);
+    setProfileOpen(false);
+    setNotificationsOpen(false);
   };
 
   const toggleTheme = () => {
     setData((current) => ({
       ...current,
-      themeName: current.themeName === 'dark' ? 'light' : 'dark',
+      themeName: current.themeName === "dark" ? "light" : "dark",
     }));
   };
 
-  const addTask = () => {
+  const addTask = (options: {
+    tag: string;
+    priority: "low" | "medium" | "high";
+    status: Task["status"];
+  }) => {
     const title = taskTitle.trim();
     if (!title) return;
     const task: Task = {
       id: `task-${Date.now()}`,
       title,
-      due: taskDue.trim() || 'без даты',
+      due: taskDue.trim() || "без даты",
       time: taskTime.trim() || undefined,
-      tag: 'личное',
-      priority: 'medium',
-      status: 'todo',
+      tag: options.tag,
+      priority: options.priority,
+      status: options.status,
     };
     setData((current) => ({ ...current, tasks: [task, ...current.tasks] }));
-    setTaskTitle('');
-    setTaskDue('');
-    setTaskTime('');
+    setTaskTitle("");
+    setTaskDue("");
+    setTaskTime("");
   };
 
   const toggleTask = (id: string) => {
@@ -134,16 +217,16 @@ export function AppShell() {
       ...current,
       tasks: current.tasks.map((task) => {
         if (task.id !== id) return task;
-        if (task.status === 'todo') return { ...task, status: 'progress' };
-        if (task.status === 'progress') return { ...task, status: 'done' };
-        return { ...task, status: 'todo' };
+        if (task.status === "todo") return { ...task, status: "progress" };
+        if (task.status === "progress") return { ...task, status: "done" };
+        return { ...task, status: "todo" };
       }),
     }));
   };
 
   const addTransaction = () => {
     const title = transactionTitle.trim();
-    const amount = Number(transactionAmount.replace(',', '.'));
+    const amount = Number(transactionAmount.replace(",", "."));
     if (!title || !Number.isFinite(amount) || amount <= 0) return;
 
     const transaction: Transaction = {
@@ -151,19 +234,22 @@ export function AppShell() {
       title,
       amount,
       type: transactionType,
-      category: transactionType === 'income' ? 'новый доход' : 'новый расход',
-      date: 'сегодня',
+      category: transactionType === "income" ? "новый доход" : "новый расход",
+      date: "сегодня",
       accountId: data.accounts[0]?.id,
     };
 
-    setData((current) => ({ ...current, transactions: [transaction, ...current.transactions] }));
-    setTransactionTitle('');
-    setTransactionAmount('');
+    setData((current) => ({
+      ...current,
+      transactions: [transaction, ...current.transactions],
+    }));
+    setTransactionTitle("");
+    setTransactionAmount("");
   };
 
   const addPlannedItem = () => {
     const title = plannedTitle.trim();
-    const amount = Number(plannedAmount.replace(',', '.'));
+    const amount = Number(plannedAmount.replace(",", "."));
     if (!title || !Number.isFinite(amount) || amount <= 0) return;
 
     const plannedItem: PlannedItem = {
@@ -172,16 +258,19 @@ export function AppShell() {
       type: plannedType,
       amountMin: amount,
       amountMax: amount,
-      due: plannedDue.trim() || 'без даты',
-      category: plannedType === 'income' ? 'плановый доход' : 'плановый расход',
-      stage: 'flexible',
-      status: 'planned',
+      due: plannedDue.trim() || "без даты",
+      category: plannedType === "income" ? "плановый доход" : "плановый расход",
+      stage: "flexible",
+      status: "planned",
     };
 
-    setData((current) => ({ ...current, plannedItems: [plannedItem, ...current.plannedItems] }));
-    setPlannedTitle('');
-    setPlannedAmount('');
-    setPlannedDue('');
+    setData((current) => ({
+      ...current,
+      plannedItems: [plannedItem, ...current.plannedItems],
+    }));
+    setPlannedTitle("");
+    setPlannedAmount("");
+    setPlannedDue("");
   };
 
   const markPlannedItemPaid = (id: string) => {
@@ -203,7 +292,7 @@ export function AppShell() {
       ...current,
       transactions: [transaction, ...current.transactions],
       plannedItems: current.plannedItems.map((item) =>
-        item.id === id ? { ...item, status: 'paid' } : item,
+        item.id === id ? { ...item, status: "paid" } : item,
       ),
     }));
   };
@@ -214,14 +303,15 @@ export function AppShell() {
     const now = new Date().toISOString();
     const userMessage: AiMessage = {
       id: `ai-msg-${Date.now()}`,
-      role: 'user',
+      role: "user",
       content,
       createdAt: now,
     };
     const assistantMessage: AiMessage = {
       id: `ai-msg-${Date.now()}-assistant`,
-      role: 'assistant',
-      content: 'AI-подключение еще не включено. Я сохраню этот запрос как контекст для будущего помощника.',
+      role: "assistant",
+      content:
+        "AI-подключение еще не включено. Я сохраню этот запрос как контекст для будущего помощника.",
       createdAt: now,
     };
 
@@ -241,17 +331,17 @@ export function AppShell() {
         ],
       };
     });
-    setAiDraft('');
+    setAiDraft("");
   };
 
   const resetData = () => {
     setData({ ...initialData, themeName: data.themeName });
-    setActiveTab('overview');
+    setActiveTab("overview");
   };
 
   const page = (
     <>
-      {activeTab === 'overview' && (
+      {activeTab === "overview" && (
         <OverviewPage
           colors={colors}
           profile={data.profile}
@@ -260,9 +350,11 @@ export function AppShell() {
           aiDraft={aiDraft}
           onChangeAiDraft={setAiDraft}
           onSendAiDraft={sendAiDraft}
+          onOpenFinance={() => navigate("finance")}
+          onOpenPlanning={() => navigate("planning")}
         />
       )}
-      {activeTab === 'finance' && (
+      {activeTab === "finance" && (
         <FinancePage
           colors={colors}
           transactions={data.transactions}
@@ -276,7 +368,7 @@ export function AppShell() {
           onAddTransaction={addTransaction}
         />
       )}
-      {activeTab === 'planning' && (
+      {activeTab === "planning" && (
         <PlanningPage
           colors={colors}
           plannedItems={data.plannedItems}
@@ -292,7 +384,7 @@ export function AppShell() {
           onMarkPlannedItemPaid={markPlannedItemPaid}
         />
       )}
-      {activeTab === 'reports' && (
+      {activeTab === "reports" && (
         <ReportsPage
           colors={colors}
           cashflow={cashflow}
@@ -301,7 +393,7 @@ export function AppShell() {
           scenarios={scenarios}
         />
       )}
-      {activeTab === 'tasks' && (
+      {activeTab === "tasks" && (
         <TasksPage
           colors={colors}
           tasks={data.tasks}
@@ -316,7 +408,9 @@ export function AppShell() {
           onToggleTask={toggleTask}
         />
       )}
-      {activeTab === 'ai' && (
+      {activeTab === "chinese" && <ChinesePage colors={colors} />}
+      {activeTab === "documents" && <DocumentsPage colors={colors} />}
+      {activeTab === "ai" && (
         <AiPage
           colors={colors}
           threads={data.aiThreads}
@@ -325,8 +419,11 @@ export function AppShell() {
           onSendDraft={sendAiDraft}
         />
       )}
-      {activeTab === 'profile' && <ProfilePage colors={colors} profile={data.profile} />}
-      {activeTab === 'settings' && (
+      {activeTab === "profile" && (
+        <ProfilePage colors={colors} profile={data.profile} />
+      )}
+      {activeTab === "notifications" && <NotificationsPage colors={colors} />}
+      {activeTab === "settings" && (
         <SettingsPage
           colors={colors}
           themeName={data.themeName}
@@ -340,16 +437,16 @@ export function AppShell() {
   if (!unlocked) {
     return (
       <>
-        <StatusBar style={data.themeName === 'dark' ? 'light' : 'dark'} />
+        <StatusBar style={data.themeName === "dark" ? "light" : "dark"} />
         <LockScreen
           colors={colors}
-          pin={pin}
-          error={pinError}
-          onChangePin={(value) => {
-            setPin(value);
-            setPinError('');
+          onAuthenticated={(account) => {
+            setData((current) => ({
+              ...current,
+              profile: { ...current.profile, name: account.name },
+            }));
+            setUnlocked(true);
           }}
-          onSubmit={handlePinSubmit}
         />
       </>
     );
@@ -358,7 +455,7 @@ export function AppShell() {
   if (isDesktop) {
     return (
       <>
-        <StatusBar style={data.themeName === 'dark' ? 'light' : 'dark'} />
+        <StatusBar style={data.themeName === "dark" ? "light" : "dark"} />
         <Screen colors={colors} scroll={false} padded={false}>
           <View style={styles.desktopShell}>
             <Sidebar
@@ -369,10 +466,44 @@ export function AppShell() {
               onToggleCollapsed={() => setSidebarCollapsed((value) => !value)}
               onChangeTab={setActiveTab}
             />
-            <ScrollView style={styles.desktopScroll} contentContainerStyle={styles.desktopContent} showsVerticalScrollIndicator={false}>
-              <AppHeader colors={colors} themeName={data.themeName} onToggleTheme={toggleTheme} />
-              {page}
-            </ScrollView>
+            <View style={styles.desktopWorkspace}>
+              <AppHeader
+                colors={colors}
+                themeName={data.themeName}
+                profileName={data.profile.name}
+                query={searchQuery}
+                results={searchResults}
+                profileOpen={profileOpen}
+                notificationsOpen={notificationsOpen}
+                onQuery={setSearchQuery}
+                onToggleTheme={toggleTheme}
+                onToggleProfile={() => {
+                  setProfileOpen((v) => !v);
+                  setNotificationsOpen(false);
+                }}
+                onToggleNotifications={() => {
+                  setNotificationsOpen((v) => !v);
+                  setProfileOpen(false);
+                }}
+                onNavigate={navigate}
+                onLock={() => {
+                  clearAuthSession().catch(() => undefined);
+                  setUnlocked(false);
+                  setProfileOpen(false);
+                }}
+              />
+              {activeTab === "overview" || activeTab === "ai" ? (
+                <View style={styles.desktopDashboard}>{page}</View>
+              ) : (
+                <ScrollView
+                  style={styles.desktopScroll}
+                  contentContainerStyle={styles.desktopContent}
+                  showsVerticalScrollIndicator={false}
+                >
+                  {page}
+                </ScrollView>
+              )}
+            </View>
           </View>
         </Screen>
       </>
@@ -381,14 +512,38 @@ export function AppShell() {
 
   return (
     <>
-      <StatusBar style={data.themeName === 'dark' ? 'light' : 'dark'} />
+      <StatusBar style={data.themeName === "dark" ? "light" : "dark"} />
       <Screen colors={colors} scroll={false}>
-        <AppHeader colors={colors} themeName={data.themeName} onToggleTheme={toggleTheme} />
-        <ScrollView contentContainerStyle={styles.mobileContent} showsVerticalScrollIndicator={false}>
+        <AppHeader
+          colors={colors}
+          themeName={data.themeName}
+          profileName={data.profile.name}
+          query={searchQuery}
+          results={searchResults}
+          profileOpen={profileOpen}
+          notificationsOpen={notificationsOpen}
+          onQuery={setSearchQuery}
+          onToggleTheme={toggleTheme}
+          onToggleProfile={() => setProfileOpen((v) => !v)}
+          onToggleNotifications={() => setNotificationsOpen((v) => !v)}
+          onNavigate={navigate}
+          onLock={() => {
+            clearAuthSession().catch(() => undefined);
+            setUnlocked(false);
+          }}
+        />
+        <ScrollView
+          contentContainerStyle={styles.mobileContent}
+          showsVerticalScrollIndicator={false}
+        >
           {page}
         </ScrollView>
         <View style={styles.mobileTabWrap}>
-          <TabBar colors={colors} activeTab={activeTab} onChangeTab={setActiveTab} />
+          <TabBar
+            colors={colors}
+            activeTab={activeTab}
+            onChangeTab={setActiveTab}
+          />
         </View>
       </Screen>
     </>
@@ -399,17 +554,23 @@ const createStyles = () =>
   StyleSheet.create({
     desktopShell: {
       flex: 1,
-      flexDirection: 'row',
+      flexDirection: "row",
     },
     desktopScroll: {
       flex: 1,
-      height: '100%',
+    },
+    desktopWorkspace: {
+      flex: 1,
+      minWidth: 0,
+      height: "100%",
+    },
+    desktopDashboard: {
+      flex: 1,
+      minHeight: 0,
     },
     desktopContent: {
-      width: '100%',
-      maxWidth: 1440,
-      alignSelf: 'center',
-      minHeight: '100%',
+      width: "100%",
+      minHeight: "100%",
       paddingHorizontal: 24,
       paddingBottom: 24,
     },
@@ -417,7 +578,7 @@ const createStyles = () =>
       paddingBottom: 104,
     },
     mobileTabWrap: {
-      position: 'absolute',
+      position: "absolute",
       left: 16,
       right: 16,
       bottom: 16,

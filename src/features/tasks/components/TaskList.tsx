@@ -1,8 +1,8 @@
-import { Check, Circle, Clock3 } from 'lucide-react-native';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Surface } from '../../../components/ui/Surface';
-import type { AppPalette } from '../../../theme/tokens';
-import type { Task, TaskStatus } from '../../../types/domain';
+import { Check, Circle, Clock3 } from "lucide-react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Surface } from "../../../components/ui/Surface";
+import type { AppPalette } from "../../../theme/tokens";
+import type { Task, TaskStatus } from "../../../types/domain";
 
 type TaskListProps = {
   colors: AppPalette;
@@ -11,9 +11,9 @@ type TaskListProps = {
 };
 
 const statusLabel: Record<TaskStatus, string> = {
-  todo: 'todo',
-  progress: 'in progress',
-  done: 'done',
+  todo: "todo",
+  progress: "in progress",
+  done: "done",
 };
 
 export function TaskList({ colors, items, onToggle }: TaskListProps) {
@@ -27,20 +27,35 @@ export function TaskList({ colors, items, onToggle }: TaskListProps) {
           style={[styles.row, index < items.length - 1 && styles.divider]}
           onPress={() => onToggle(item.id)}
         >
-          <View style={[styles.check, item.status === 'done' && styles.doneCheck]}>
-            {item.status === 'done' ? (
+          <View
+            style={[styles.check, item.status === "done" && styles.doneCheck]}
+          >
+            {item.status === "done" ? (
               <Check color="#FFFFFF" size={16} />
-            ) : item.status === 'progress' ? (
+            ) : item.status === "progress" ? (
               <Clock3 color={colors.amber} size={16} />
             ) : (
               <Circle color={colors.textFaint} size={16} />
             )}
           </View>
           <View style={styles.copy}>
-            <Text style={[styles.title, item.status === 'done' && styles.doneTitle]}>{item.title}</Text>
-            <Text style={styles.meta}>{item.due}{item.time ? ` · ${item.time}` : ''} · {item.tag}</Text>
+            <Text
+              style={[styles.title, item.status === "done" && styles.doneTitle]}
+            >
+              {item.title}
+            </Text>
+            <Text style={styles.meta}>
+              {item.due}
+              {item.time ? ` · ${item.time}` : ""} · {item.tag}
+            </Text>
           </View>
-          <Text style={[styles.status, item.status === 'progress' && styles.progress, item.status === 'done' && styles.done]}>
+          <Text
+            style={[
+              styles.status,
+              item.status === "progress" && styles.progress,
+              item.status === "done" && styles.done,
+            ]}
+          >
             {statusLabel[item.status]}
           </Text>
         </Pressable>
@@ -54,8 +69,8 @@ const createStyles = (colors: AppPalette) =>
     row: {
       minHeight: 62,
       padding: 12,
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: "row",
+      alignItems: "center",
       gap: 12,
     },
     divider: {
@@ -67,8 +82,8 @@ const createStyles = (colors: AppPalette) =>
       height: 30,
       borderRadius: 15,
       backgroundColor: colors.surfaceSoft,
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems: "center",
+      justifyContent: "center",
       borderWidth: 1,
       borderColor: colors.border,
     },
@@ -81,12 +96,12 @@ const createStyles = (colors: AppPalette) =>
     },
     title: {
       color: colors.text,
-      fontWeight: '800',
+      fontWeight: "800",
       fontSize: 15,
     },
     doneTitle: {
       color: colors.textFaint,
-      textDecorationLine: 'line-through',
+      textDecorationLine: "line-through",
     },
     meta: {
       color: colors.textFaint,
@@ -95,9 +110,9 @@ const createStyles = (colors: AppPalette) =>
     },
     status: {
       color: colors.textFaint,
-      fontWeight: '800',
+      fontWeight: "800",
       fontSize: 11,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     progress: {
       color: colors.amber,

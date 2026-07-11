@@ -1,5 +1,5 @@
-import { StyleSheet, TextInput, type KeyboardTypeOptions } from 'react-native';
-import type { AppPalette } from '../../theme/tokens';
+import { StyleSheet, TextInput, type KeyboardTypeOptions } from "react-native";
+import type { AppPalette } from "../../theme/tokens";
 
 type TextFieldProps = {
   colors: AppPalette;
@@ -40,14 +40,15 @@ export function TextField({
 const createStyles = (colors: AppPalette) =>
   StyleSheet.create({
     input: {
-      minHeight: 46,
+      minHeight: 40,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
+      backgroundColor:
+        colors.mode === "dark" ? "rgba(8,8,8,.34)" : "rgba(255,255,255,.54)",
       color: colors.text,
       paddingHorizontal: 12,
-      fontSize: 15,
+      fontSize: 12,
       letterSpacing: 0,
     },
   });

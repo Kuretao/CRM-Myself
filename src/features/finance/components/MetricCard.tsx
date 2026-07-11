@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Surface } from '../../../components/ui/Surface';
-import { Kicker, Title } from '../../../components/ui/Typography';
-import type { AppPalette } from '../../../theme/tokens';
+import type { ReactNode } from "react";
+import { StyleSheet, View } from "react-native";
+import { Surface } from "../../../components/ui/Surface";
+import { Kicker, Title } from "../../../components/ui/Typography";
+import type { AppPalette } from "../../../theme/tokens";
 
 type MetricCardProps = {
   colors: AppPalette;
@@ -17,7 +17,9 @@ export function MetricCard({ colors, label, value, icon }: MetricCardProps) {
     <Surface colors={colors} style={styles.card}>
       <View style={styles.icon}>{icon}</View>
       <Kicker colors={colors}>{label}</Kicker>
-      <Title colors={colors} style={styles.value}>{value}</Title>
+      <Title colors={colors} style={styles.value}>
+        {value}
+      </Title>
     </Surface>
   );
 }
@@ -28,10 +30,10 @@ const createStyles = () =>
       flex: 1,
       minHeight: 92,
       padding: 12,
-      justifyContent: 'space-between',
+      justifyContent: "space-between",
     },
     icon: {
-      alignSelf: 'flex-start',
+      alignSelf: "flex-start",
     },
     value: {
       fontSize: 15,

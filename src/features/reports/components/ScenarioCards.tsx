@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Surface } from '../../../components/ui/Surface';
-import type { AppPalette } from '../../../theme/tokens';
-import { formatRub } from '../../../utils/format';
+import { StyleSheet, Text, View } from "react-native";
+import { Surface } from "../../../components/ui/Surface";
+import type { AppPalette } from "../../../theme/tokens";
+import { formatRub } from "../../../utils/format";
 
 type Scenario = {
   title: string;
   description: string;
   value: number;
-  tone: 'accent' | 'green' | 'amber';
+  tone: "accent" | "green" | "amber";
 };
 
 type ScenarioCardsProps = {
@@ -21,7 +21,9 @@ export function ScenarioCards({ colors, items }: ScenarioCardsProps) {
     <View style={styles.grid}>
       {items.map((item) => (
         <Surface key={item.title} colors={colors} style={styles.card}>
-          <View style={[styles.marker, { backgroundColor: colors[item.tone] }]} />
+          <View
+            style={[styles.marker, { backgroundColor: colors[item.tone] }]}
+          />
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.value}>{formatRub(item.value)}</Text>
           <Text style={styles.description}>{item.description}</Text>
@@ -48,12 +50,12 @@ const createStyles = (colors: AppPalette) =>
     },
     title: {
       color: colors.text,
-      fontWeight: '900',
+      fontWeight: "900",
       fontSize: 15,
     },
     value: {
       color: colors.text,
-      fontWeight: '900',
+      fontWeight: "900",
       fontSize: 24,
       lineHeight: 30,
     },

@@ -1,0 +1,4 @@
+{$NOVA_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy api:4000
+}

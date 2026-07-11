@@ -1,166 +1,209 @@
-import { Bot, Send, Sparkles } from 'lucide-react-native';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from '../components/ui/Button';
-import { SectionHeader } from '../components/ui/SectionHeader';
-import { Surface } from '../components/ui/Surface';
-import { TextField } from '../components/ui/TextField';
-import { Body, Muted } from '../components/ui/Typography';
-import type { AppPalette } from '../theme/tokens';
-import type { AiThread } from '../types/domain';
-
-type AiPageProps = {
+import { Bot, Plus, Send, Sparkles } from "lucide-react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Surface } from "../components/ui/Surface";
+import { TextField } from "../components/ui/TextField";
+import type { AppPalette } from "../theme/tokens";
+import type { AiThread } from "../types/domain";
+type Props = {
   colors: AppPalette;
   threads: AiThread[];
   draft: string;
-  onChangeDraft: (value: string) => void;
+  onChangeDraft: (v: string) => void;
   onSendDraft: () => void;
 };
-
-export function AiPage({ colors, threads, draft, onChangeDraft, onSendDraft }: AiPageProps) {
-  const styles = createStyles(colors);
-  const activeThread = threads[0];
-
+export function AiPage(p: Props) {
+  const s = css(p.colors),
+    thread = p.threads[0];
+  const prompts = [
+    "Проверь риски бюджета",
+    "Что оплатить в первую очередь?",
+    "Составь план до вылета",
+  ];
   return (
-    <>
-      <SectionHeader colors={colors} title="AI workspace" subtitle="chat foundation" />
-      <Surface colors={colors} style={styles.shell}>
-        <View style={styles.threadList}>
-          <View style={styles.threadHead}>
-            <Sparkles color={colors.accent} size={18} />
-            <Body colors={colors} style={styles.threadTitle}>Диалоги</Body>
+    <View style={s.page}>
+      <View style={s.head}>
+        <View>
+          <Text style={s.kicker}>NOVA INTELLIGENCE</Text>
+          <Text style={s.title}>AI-помощник</Text>
+          <Text style={s.sub}>
+            Финансы, задачи и подготовка к переезду в одном контексте.
+          </Text>
+        </View>
+        <Pressable style={s.new}>
+          <Plus size={15} color="#03101F" />
+          <Text style={s.newText}>Новый диалог</Text>
+        </Pressable>
+      </View>
+      <Surface colors={p.colors} style={s.shell}>
+        <View style={s.threads}>
+          <View style={s.threadHead}>
+            <Sparkles size={16} color={p.colors.accent} />
+            <Text style={s.threadHeadText}>Диалоги</Text>
           </View>
-          {threads.map((thread) => (
-            <View key={thread.id} style={styles.threadItem}>
-              <Text style={styles.threadName}>{thread.title}</Text>
-              <Text style={styles.threadDate}>{thread.updatedAt}</Text>
+          {p.threads.map((x) => (
+            <View key={x.id} style={s.thread}>
+              <Text style={s.threadTitle}>{x.title}</Text>
+              <Text style={s.threadDate}>{x.updatedAt}</Text>
             </View>
           ))}
         </View>
-
-        <View style={styles.chat}>
-          <View style={styles.chatHead}>
-            <View style={styles.botIcon}>
-              <Bot color={colors.accent} size={20} />
+        <View style={s.chat}>
+          <View style={s.chatHead}>
+            <View style={s.bot}>
+              <Bot size={19} color={p.colors.accent} />
             </View>
-            <View style={styles.chatCopy}>
-              <Body colors={colors} style={styles.chatTitle}>{activeThread?.title || 'Новый диалог'}</Body>
-              <Muted colors={colors}>Заготовка под будущего помощника по финансам, задачам и планированию.</Muted>
+            <View>
+              <Text style={s.chatTitle}>{thread?.title || "Новый диалог"}</Text>
+              <Text style={s.online}>● локальный помощник активен</Text>
             </View>
           </View>
-
-          <View style={styles.messages}>
-            {(activeThread?.messages || []).map((message) => (
-              <View key={message.id} style={[styles.message, message.role === 'assistant' && styles.assistantMessage]}>
-                <Text style={styles.messageRole}>{message.role}</Text>
-                <Text style={styles.messageText}>{message.content}</Text>
+          <ScrollView style={s.messages} contentContainerStyle={{ gap: 10 }}>
+            {(thread?.messages || []).map((m) => (
+              <View
+                key={m.id}
+                style={[
+                  s.message,
+                  m.role === "assistant" ? s.assistant : s.user,
+                ]}
+              >
+                <Text style={s.role}>
+                  {m.role === "assistant" ? "NOVA" : "ВЫ"}
+                </Text>
+                <Text style={s.messageText}>{m.content}</Text>
               </View>
             ))}
+          </ScrollView>
+          <View style={s.prompts}>
+            {prompts.map((x) => (
+              <Pressable
+                key={x}
+                style={s.prompt}
+                onPress={() => p.onChangeDraft(x)}
+              >
+                <Text style={s.promptText}>{x}</Text>
+              </Pressable>
+            ))}
           </View>
-
-          <View style={styles.composer}>
-            <View style={styles.input}>
-              <TextField colors={colors} value={draft} onChangeText={onChangeDraft} placeholder="Спроси про расходы, задачи или план месяца" />
+          <View style={s.composer}>
+            <View style={{ flex: 1 }}>
+              <TextField
+                colors={p.colors}
+                value={p.draft}
+                onChangeText={p.onChangeDraft}
+                placeholder="Спроси про бюджет, планы или задачи"
+              />
             </View>
-            <Button colors={colors} label="" icon={<Send color="#FFFFFF" size={18} />} onPress={onSendDraft} />
+            <Pressable style={s.send} onPress={p.onSendDraft}>
+              <Send size={17} color="#03101F" />
+            </Pressable>
           </View>
         </View>
       </Surface>
-    </>
+    </View>
   );
 }
-
-const createStyles = (colors: AppPalette) =>
+const css = (c: AppPalette) =>
   StyleSheet.create({
-    shell: {
-      overflow: 'hidden',
+    page: { flex: 1, height: "100%", padding: 22, gap: 14, minHeight: 0 },
+    head: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "flex-end",
     },
-    threadList: {
+    kicker: { color: c.textFaint, fontSize: 9, fontWeight: "800" },
+    title: { color: c.text, fontSize: 25, fontWeight: "700", marginTop: 5 },
+    sub: { color: c.textSoft, fontSize: 11, marginTop: 4 },
+    new: {
+      height: 36,
+      paddingHorizontal: 12,
+      borderRadius: 8,
+      backgroundColor: c.accent,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 7,
+    },
+    newText: { color: "#03101F", fontSize: 10, fontWeight: "800" },
+    shell: {
+      flex: 1,
+      minHeight: 0,
+      flexDirection: "row",
+      overflow: "hidden",
+    },
+    threads: {
+      width: 250,
       padding: 12,
-      gap: 10,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.border,
+      borderRightWidth: 1,
+      borderRightColor: c.border,
+      gap: 8,
     },
     threadHead: {
-      flexDirection: 'row',
-      alignItems: 'center',
+      height: 36,
+      flexDirection: "row",
+      alignItems: "center",
       gap: 8,
     },
-    threadTitle: {
-      fontWeight: '900',
-    },
-    threadItem: {
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
-      padding: 10,
-    },
-    threadName: {
-      color: colors.text,
-      fontWeight: '900',
-      fontSize: 13,
-    },
-    threadDate: {
-      color: colors.textFaint,
-      fontSize: 11,
-      marginTop: 3,
-    },
-    chat: {
-      padding: 12,
-      gap: 12,
-    },
-    chatHead: {
-      flexDirection: 'row',
-      gap: 10,
-      alignItems: 'center',
-    },
-    botIcon: {
-      width: 40,
-      height: 40,
-      borderRadius: 8,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: colors.accentSoft,
-      borderWidth: 1,
-      borderColor: colors.borderStrong,
-    },
-    chatCopy: {
-      flex: 1,
-    },
-    chatTitle: {
-      fontWeight: '900',
-    },
-    messages: {
-      gap: 8,
-    },
-    message: {
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
+    threadHeadText: { color: c.text, fontSize: 12, fontWeight: "800" },
+    thread: {
       padding: 11,
+      borderRadius: 8,
+      backgroundColor: c.accentSoft,
+      borderWidth: 1,
+      borderColor: c.borderStrong,
     },
-    assistantMessage: {
-      backgroundColor: colors.accentSoft,
+    threadTitle: { color: c.text, fontSize: 11, fontWeight: "700" },
+    threadDate: { color: c.textFaint, fontSize: 8, marginTop: 3 },
+    chat: { flex: 1, padding: 14, gap: 10 },
+    chatHead: {
+      height: 48,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 10,
+      borderBottomWidth: 1,
+      borderBottomColor: c.border,
     },
-    messageRole: {
-      color: colors.textFaint,
-      fontSize: 11,
-      fontWeight: '900',
-      textTransform: 'uppercase',
+    bot: {
+      width: 34,
+      height: 34,
+      borderRadius: 8,
+      backgroundColor: c.accentSoft,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    chatTitle: { color: c.text, fontSize: 12, fontWeight: "800" },
+    online: { color: c.green, fontSize: 8, marginTop: 3 },
+    messages: { flex: 1 },
+    message: {
+      maxWidth: "72%",
+      padding: 12,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: c.border,
+    },
+    assistant: { alignSelf: "flex-start", backgroundColor: c.surfaceSoft },
+    user: { alignSelf: "flex-end", backgroundColor: c.accentSoft },
+    role: {
+      color: c.textFaint,
+      fontSize: 7,
+      fontWeight: "900",
       marginBottom: 4,
     },
-    messageText: {
-      color: colors.text,
-      fontSize: 14,
-      lineHeight: 20,
+    messageText: { color: c.text, fontSize: 11, lineHeight: 17 },
+    prompts: { flexDirection: "row", gap: 7 },
+    prompt: {
+      paddingHorizontal: 9,
+      paddingVertical: 7,
+      borderRadius: 7,
+      borderWidth: 1,
+      borderColor: c.border,
+      backgroundColor: c.surfaceSoft,
     },
-    composer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 10,
-    },
-    input: {
-      flex: 1,
+    promptText: { color: c.textSoft, fontSize: 8, fontWeight: "700" },
+    composer: { flexDirection: "row", gap: 8 },
+    send: {
+      width: 40,
+      borderRadius: 8,
+      backgroundColor: c.accent,
+      alignItems: "center",
+      justifyContent: "center",
     },
   });

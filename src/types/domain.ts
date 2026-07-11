@@ -1,20 +1,31 @@
-export type ThemeName = 'light' | 'dark';
+export type ThemeName = "light" | "dark";
 
-export type TabName = 'overview' | 'finance' | 'planning' | 'reports' | 'tasks' | 'ai' | 'profile' | 'settings';
+export type TabName =
+  | "overview"
+  | "finance"
+  | "planning"
+  | "reports"
+  | "tasks"
+  | "chinese"
+  | "documents"
+  | "ai"
+  | "profile"
+  | "settings"
+  | "notifications";
 
-export type ReportPeriod = 'month' | 'quarter' | 'year';
+export type ReportPeriod = "month" | "quarter" | "year";
 
-export type MoneyType = 'income' | 'expense';
+export type MoneyType = "income" | "expense";
 
-export type TaskStatus = 'todo' | 'progress' | 'done';
+export type TaskStatus = "todo" | "progress" | "done";
 
-export type PlannedStatus = 'planned' | 'paid' | 'skipped';
+export type PlannedStatus = "planned" | "paid" | "skipped";
 
-export type PlannedStage = 'required' | 'reserve' | 'flexible';
+export type PlannedStage = "required" | "reserve" | "flexible";
 
-export type AccountType = 'cash' | 'card' | 'savings' | 'debt';
+export type AccountType = "cash" | "card" | "savings" | "debt";
 
-export type CategoryKind = MoneyType | 'task';
+export type CategoryKind = MoneyType | "task";
 
 export type Task = {
   id: string;
@@ -23,7 +34,7 @@ export type Task = {
   time?: string;
   tag: string;
   description?: string;
-  priority?: 'low' | 'medium' | 'high';
+  priority?: "low" | "medium" | "high";
   status: TaskStatus;
 };
 
@@ -58,7 +69,7 @@ export type Account = {
   id: string;
   title: string;
   type: AccountType;
-  currency: 'RUB' | 'CNY' | 'USD';
+  currency: "RUB" | "CNY" | "USD";
   balance: number;
 };
 
@@ -71,7 +82,7 @@ export type Category = {
 
 export type AiMessage = {
   id: string;
-  role: 'user' | 'assistant' | 'system';
+  role: "user" | "assistant" | "system";
   content: string;
   createdAt: string;
 };

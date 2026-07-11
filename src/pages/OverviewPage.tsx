@@ -1,615 +1,903 @@
-import { ArrowDownRight, ArrowUpRight, Bot, CalendarDays, CreditCard, Plus, Send } from 'lucide-react-native';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
-import Svg, { Circle, Rect } from 'react-native-svg';
-import { brand } from '../brand/identity';
-import { Surface } from '../components/ui/Surface';
-import { Kicker, Muted, Title } from '../components/ui/Typography';
-import { MetricCard } from '../features/finance/components/MetricCard';
-import type { AppPalette } from '../theme/tokens';
-import type { PlannedPayment, Profile } from '../types/domain';
-import { formatRange, formatRub } from '../utils/format';
+import {
+  ArrowDownLeft,
+  ArrowUpRight,
+  CalendarDays,
+  ChevronRight,
+  MoreHorizontal,
+  Plane,
+  Plus,
+  WalletCards,
+} from "lucide-react-native";
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+  type ViewStyle,
+} from "react-native";
+import Svg, {
+  Circle,
+  Defs,
+  LinearGradient,
+  Path,
+  Stop,
+} from "react-native-svg";
+import { useState } from "react";
+import type { AppPalette } from "../theme/tokens";
+import type { AnalyticsTotals, PlannedItem, Profile } from "../types/domain";
+import { formatRub } from "../utils/format";
 
-type OverviewPageProps = {
+type Props = {
   colors: AppPalette;
   profile: Profile;
-  totals: {
-    income: number;
-    fixedExpenses: number;
-    plannedMax: number;
-    leftMin: number;
-    leftMax: number;
-    taskProgress: number;
-  };
-  planned: PlannedPayment[];
+  totals: AnalyticsTotals;
+  planned: PlannedItem[];
   aiDraft: string;
   onChangeAiDraft: (value: string) => void;
   onSendAiDraft: () => void;
+  onOpenFinance: () => void;
+  onOpenPlanning: () => void;
 };
+
+const chart = [34, 38, 31, 44, 40, 53, 48, 59, 51, 67, 62, 76, 70, 82, 74, 88];
 
 export function OverviewPage({
   colors,
-  profile,
   totals,
   planned,
-  aiDraft,
-  onChangeAiDraft,
-  onSendAiDraft,
-}: OverviewPageProps) {
+  onOpenFinance,
+  onOpenPlanning,
+}: Props) {
+  const { width } = useWindowDimensions();
+  const compact = width < 1250;
   const styles = createStyles(colors);
-  const { width, height } = useWindowDimensions();
-  const isDesktop = width >= 980;
-  const isCompact = width < 760;
-  const plannedExpenses = planned
-    .filter((item) => item.type === 'expense' && item.status === 'planned')
-    .reduce((sum, item) => sum + item.amountMax, 0);
-  const plannedIncome = planned
-    .filter((item) => item.type === 'income' && item.status === 'planned')
-    .reduce((sum, item) => sum + item.amountMax, 0);
-  const dashboardHeight = isDesktop ? Math.max(680, height - 86) : undefined;
+  const remaining = Math.round((totals.leftMin + totals.leftMax) / 2);
+  const upcoming = planned
+    .filter((item) => item.status === "planned")
+    .slice(0, 4);
+  const [period, setPeriod] = useState<"1m" | "6m" | "1y">("6m");
 
   return (
-    <View style={[styles.page, isDesktop && { height: dashboardHeight }]}>
-      <View style={[styles.dashboardGrid, isCompact && styles.dashboardGridCompact]}>
-        <View style={styles.mainColumn}>
-          <View style={[styles.topGrid, isCompact && styles.topGridCompact]}>
-            <Surface colors={colors} style={styles.hero}>
-              <View>
-                <Kicker colors={colors}>Good morning · {profile.name.split(' ')[0]}</Kicker>
-                <Title colors={colors} style={styles.greeting}>Make Things <Text style={styles.accentWord}>Simple</Text></Title>
-                <Muted colors={colors} style={styles.heroText}>
-                  {brand.shortName} держит вместе деньги, планы и задачи без хаоса в таблицах.
-                </Muted>
-              </View>
-              <View>
-                <Muted colors={colors} style={styles.balanceLabel}>Прогнозный остаток</Muted>
-                <Title colors={colors} style={styles.heroTitle}>{formatRange(totals.leftMin, totals.leftMax)}</Title>
-                <View style={styles.actions}>
-                  <Pressable style={styles.actionButton}>
-                    <Send color="#FFFFFF" size={16} />
-                    <Text style={styles.actionText}>Расход</Text>
-                  </Pressable>
-                  <Pressable style={styles.actionButtonSoft}>
-                    <Plus color={colors.text} size={16} />
-                    <Text style={styles.actionTextSoft}>Поступление</Text>
-                  </Pressable>
-                  <Pressable style={styles.actionButtonSoft}>
-                    <CalendarDays color={colors.text} size={16} />
-                    <Text style={styles.actionTextSoft}>План</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </Surface>
-
-            <Surface colors={colors} style={[styles.progressCard, isCompact && styles.progressCardCompact]}>
-              <View style={styles.datePill}>
-                <CalendarDays color={colors.accent} size={16} />
-                <Text style={styles.dateText}>{profile.startDate}</Text>
-              </View>
-              <View style={styles.orbit}>
-                <Text style={styles.orbitValue}>{totals.taskProgress}%</Text>
-                <Text style={styles.orbitLabel}>tasks</Text>
-              </View>
-              <Muted colors={colors}>Прогресс задач до переезда</Muted>
-            </Surface>
-          </View>
-
-          <View style={[styles.metrics, isCompact && styles.metricsCompact]}>
-            <MetricCard colors={colors} icon={<ArrowUpRight color={colors.green} size={20} />} label="банк" value={formatRub(totals.income)} />
-            <MetricCard colors={colors} icon={<ArrowDownRight color={colors.red} size={20} />} label="план расходов" value={formatRub(totals.fixedExpenses + totals.plannedMax)} />
-            <MetricCard colors={colors} icon={<CreditCard color={colors.amber} size={20} />} label="доп" value="60 000 ₽" />
-          </View>
-
-          <View style={[styles.analyticsGrid, isCompact && styles.analyticsGridCompact]}>
-            <Surface colors={colors} style={styles.chartCard}>
-              <View style={styles.cardHead}>
-                <View>
-                  <Text style={styles.cardTitle}>Cash structure</Text>
-                  <Text style={styles.cardHint}>банк · расходы · платежи</Text>
-                </View>
-                <Text style={styles.cardBadge}>live</Text>
-              </View>
-              <CashBars
-                colors={colors}
-                items={[
-                  { label: 'Bank', value: totals.income, color: colors.green },
-                  { label: 'Spent', value: totals.fixedExpenses, color: colors.red },
-                  { label: 'Plan', value: plannedExpenses, color: colors.accent },
-                  { label: 'In', value: plannedIncome, color: colors.blue },
-                ]}
-              />
-            </Surface>
-
-            <Surface colors={colors} style={styles.chartCard}>
-              <View style={styles.cardHead}>
-                <View>
-                  <Text style={styles.cardTitle}>Allocation</Text>
-                  <Text style={styles.cardHint}>планируемая нагрузка</Text>
-                </View>
-                <Text style={styles.cardBadge}>{planned.length}</Text>
-              </View>
-              <PlanDonut colors={colors} paid={totals.fixedExpenses} planned={plannedExpenses} reserve={Math.max(totals.plannedMax - plannedExpenses, 0)} />
-            </Surface>
-          </View>
+    <View style={styles.page}>
+      <View style={styles.titleRow}>
+        <View>
+          <Text style={styles.eyebrow}>СУББОТА, 11 ИЮЛЯ</Text>
+          <Text style={styles.title}>Добрый день, Богдан</Text>
+          <Text style={styles.subtitle}>
+            Вот что происходит с деньгами и подготовкой к переезду.
+          </Text>
         </View>
+        <View style={styles.titleActions}>
+          <Pressable style={styles.secondaryButton}>
+            <CalendarDays size={15} color={colors.textSoft} />
+            <Text style={styles.secondaryText}>Июль 2026</Text>
+          </Pressable>
+          <Pressable style={styles.primaryButton} onPress={onOpenFinance}>
+            <Plus size={16} color="#17130D" />
+            <Text style={styles.primaryText}>Добавить операцию</Text>
+          </Pressable>
+        </View>
+      </View>
 
-        <View style={[styles.sideColumn, isCompact && styles.sideColumnCompact]}>
-          <Surface colors={colors} style={styles.aiCard}>
-            <View style={styles.cardHead}>
-              <View style={styles.aiTitleRow}>
-                <View style={styles.aiIcon}>
-                  <Bot color={colors.accent} size={18} />
-                </View>
+      <View style={[styles.kpiRow, compact && styles.kpiRowCompact]}>
+        <Kpi
+          colors={colors}
+          label="Общий банк"
+          value={formatRub(totals.income)}
+          delta="+18,4%"
+          positive
+        />
+        <Kpi
+          colors={colors}
+          label="Уже оплачено"
+          value={formatRub(totals.fixedExpenses)}
+          delta="за июль"
+        />
+        <Kpi
+          colors={colors}
+          label="План расходов"
+          value={formatRub(totals.plannedMax)}
+          delta={`${planned.length} платежей`}
+        />
+        <Kpi
+          colors={colors}
+          label="Останется"
+          value={formatRub(remaining)}
+          delta="после всех планов"
+          positive
+        />
+      </View>
+
+      <View style={[styles.dashboard, compact && styles.dashboardCompact]}>
+        <View style={styles.mainColumn}>
+          <View style={styles.chartRow}>
+            <View style={styles.balanceCard}>
+              <View style={styles.cardHeader}>
                 <View>
-                  <Text style={styles.cardTitle}>Quick AI</Text>
-                  <Text style={styles.cardHint}>спроси про деньги или задачи</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.aiBubble}>
-              <Text style={styles.aiBubbleText}>Могу быстро проверить риски бюджета, платежи недели или собрать план дня.</Text>
-            </View>
-            <View style={styles.aiInputRow}>
-              <TextInput
-                style={[styles.aiInput, !aiDraft && styles.aiPlaceholder]}
-                value={aiDraft}
-                onChangeText={onChangeAiDraft}
-                placeholder="Напиши запрос..."
-                placeholderTextColor={colors.textFaint}
-                numberOfLines={1}
-                onSubmitEditing={onSendAiDraft}
-              />
-              <Pressable style={styles.aiSend} onPress={onSendAiDraft}>
-                <Send color="#FFFFFF" size={15} />
-              </Pressable>
-            </View>
-          </Surface>
-
-          <Surface colors={colors} style={styles.paymentsCard}>
-            <View style={styles.cardHead}>
-              <View>
-                <Text style={styles.cardTitle}>Ближайшие платежи</Text>
-                <Text style={styles.cardHint}>required + reserve</Text>
-              </View>
-              <Text style={styles.cardBadge}>{planned.filter((item) => item.status === 'planned').length}</Text>
-            </View>
-            <ScrollView style={styles.paymentsScroll} contentContainerStyle={styles.paymentsContent} showsVerticalScrollIndicator={false}>
-              {planned.map((item) => (
-                <View key={item.id} style={styles.paymentRow}>
-                  <View style={[styles.paymentDot, item.type === 'income' && styles.paymentDotIncome]} />
-                  <View style={styles.paymentCopy}>
-                    <Text style={styles.paymentTitle}>{item.title}</Text>
-                    <Text style={styles.paymentMeta}>{item.due} · {item.category}</Text>
-                  </View>
-                  <Text style={[styles.paymentAmount, item.type === 'income' && styles.paymentIncome]}>
-                    {item.type === 'income' ? '+' : '-'}{formatRange(item.amountMin, item.amountMax)}
+                  <Text style={styles.cardTitle}>Движение денег</Text>
+                  <Text style={styles.cardSub}>
+                    Фактический и прогнозный баланс
                   </Text>
                 </View>
+                <View style={styles.periods}>
+                  {(
+                    [
+                      ["1m", "1 мес"],
+                      ["6m", "6 мес"],
+                      ["1y", "1 год"],
+                    ] as const
+                  ).map(([key, label]) => (
+                    <Pressable key={key} onPress={() => setPeriod(key)}>
+                      <Text
+                        style={
+                          period === key ? styles.periodActive : styles.period
+                        }
+                      >
+                        {label}
+                      </Text>
+                    </Pressable>
+                  ))}
+                </View>
+              </View>
+              <View style={styles.chartValueRow}>
+                <Text style={styles.chartValue}>
+                  {formatRub(totals.income - totals.fixedExpenses)}
+                </Text>
+                <Text style={styles.growth}>↗ 12,8%</Text>
+              </View>
+              <BalanceChart colors={colors} period={period} />
+              <View style={styles.chartFooter}>
+                <Text style={styles.axis}>Фев</Text>
+                <Text style={styles.axis}>Мар</Text>
+                <Text style={styles.axis}>Апр</Text>
+                <Text style={styles.axis}>Май</Text>
+                <Text style={styles.axis}>Июн</Text>
+                <Text style={styles.axis}>Июл</Text>
+              </View>
+            </View>
+            <View style={styles.forecastCard}>
+              <Text style={styles.forecastLabel}>ФИНАНСОВОЕ ЗДОРОВЬЕ</Text>
+              <Text style={styles.forecastValue}>74</Text>
+              <Text style={styles.forecastOf}>из 100</Text>
+              <View style={styles.healthTrack}>
+                <View style={styles.healthFill} />
+              </View>
+              <Text style={styles.forecastTitle}>Устойчивый план</Text>
+              <Text style={styles.forecastText}>
+                Главный риск — крупные обязательные платежи до конца июля.
+              </Text>
+              <Pressable style={styles.forecastAction} onPress={onOpenPlanning}>
+                <Text style={styles.forecastActionText}>
+                  Посмотреть прогноз
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+
+          <View style={styles.bottomGrid}>
+            <View style={styles.spendingCard}>
+              <View style={styles.cardHeader}>
+                <View>
+                  <Text style={styles.cardTitle}>Структура расходов</Text>
+                  <Text style={styles.cardSub}>Текущий финансовый план</Text>
+                </View>
+                <MoreHorizontal size={18} color={colors.textFaint} />
+              </View>
+              <View style={styles.donutContent}>
+                <Donut colors={colors} />
+                <View style={styles.legend}>
+                  <Legend
+                    color={colors.accent}
+                    label="Учеба"
+                    value="42%"
+                    colors={colors}
+                  />
+                  <Legend
+                    color={colors.green}
+                    label="Жизнь"
+                    value="28%"
+                    colors={colors}
+                  />
+                  <Legend
+                    color={colors.blue}
+                    label="Переезд"
+                    value="18%"
+                    colors={colors}
+                  />
+                  <Legend
+                    color={colors.red}
+                    label="Другое"
+                    value="12%"
+                    colors={colors}
+                  />
+                </View>
+              </View>
+            </View>
+            <View style={styles.goalCard}>
+              <View style={styles.goalIcon}>
+                <Plane size={20} color="#17130D" />
+              </View>
+              <Text style={styles.goalLabel}>ГЛАВНАЯ ЦЕЛЬ</Text>
+              <Text style={styles.goalTitle}>Переезд в Чэнду</Text>
+              <Text style={styles.goalMeta}>
+                До старта программы осталось 52 дня
+              </Text>
+              <View style={styles.progressTrack}>
+                <View style={[styles.progressFill, { width: "68%" }]} />
+              </View>
+              <View style={styles.progressLabels}>
+                <Text style={styles.progressStrong}>68% готово</Text>
+                <Text style={styles.progressWeak}>4 из 6 этапов</Text>
+              </View>
+            </View>
+            <View style={styles.commitmentCard}>
+              <Text style={styles.goalLabel}>ОБЯЗАТЕЛЬСТВА</Text>
+              <Text style={styles.commitmentValue}>
+                {planned.filter((item) => item.status === "planned").length}
+              </Text>
+              <Text style={styles.commitmentTitle}>платежей впереди</Text>
+              <View style={styles.commitmentRows}>
+                <View>
+                  <Text style={styles.commitmentMeta}>Ближайший</Text>
+                  <Text style={styles.commitmentStrong}>15 июля</Text>
+                </View>
+                <View>
+                  <Text style={styles.commitmentMeta}>Нагрузка</Text>
+                  <Text style={styles.commitmentStrong}>
+                    {formatRub(totals.plannedMax)}
+                  </Text>
+                </View>
+              </View>
+              <Pressable style={styles.forecastAction} onPress={onOpenPlanning}>
+                <Text style={styles.forecastActionText}>Открыть план</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.sideColumn}>
+          <View style={styles.cardVisual}>
+            <View style={styles.cardTop}>
+              <View>
+                <Text style={styles.cardBrand}>NOVA</Text>
+                <Text style={styles.cardType}>PERSONAL</Text>
+              </View>
+              <WalletCards size={23} color="#17130D" />
+            </View>
+            <Text style={styles.cardBalanceLabel}>Доступный баланс</Text>
+            <Text style={styles.cardBalance}>
+              {formatRub(Math.max(remaining, 0))}
+            </Text>
+            <View style={styles.cardBottom}>
+              <Text style={styles.cardNumber}>•••• 1208</Text>
+              <Text style={styles.cardCurrency}>RUB</Text>
+            </View>
+          </View>
+          <View style={styles.transferRow}>
+            <Pressable style={styles.transferButton} onPress={onOpenFinance}>
+              <ArrowDownLeft size={16} color={colors.text} />
+              <Text style={styles.transferText}>Получить</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.transferButton, styles.transferPrimary]}
+              onPress={onOpenFinance}
+            >
+              <ArrowUpRight size={16} color="#17130D" />
+              <Text style={styles.transferPrimaryText}>Перевести</Text>
+            </Pressable>
+          </View>
+
+          <View style={styles.upcomingCard}>
+            <View style={styles.cardHeader}>
+              <View>
+                <Text style={styles.cardTitle}>Ближайшие платежи</Text>
+                <Text style={styles.cardSub}>Следующие обязательства</Text>
+              </View>
+              <Pressable onPress={onOpenPlanning}>
+                <Text style={styles.allLink}>Все</Text>
+              </Pressable>
+            </View>
+            <ScrollView
+              style={styles.paymentScroll}
+              showsVerticalScrollIndicator={false}
+            >
+              {upcoming.map((item, index) => (
+                <Payment
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  colors={colors}
+                />
               ))}
             </ScrollView>
-          </Surface>
+            <Pressable style={styles.scheduleButton} onPress={onOpenPlanning}>
+              <Text style={styles.scheduleText}>
+                Открыть платежный календарь
+              </Text>
+              <ChevronRight size={15} color={colors.textSoft} />
+            </Pressable>
+          </View>
         </View>
       </View>
     </View>
   );
 }
 
-function CashBars({
+function Kpi({
   colors,
-  items,
+  label,
+  value,
+  delta,
+  positive,
 }: {
   colors: AppPalette;
-  items: { label: string; value: number; color: string }[];
+  label: string;
+  value: string;
+  delta: string;
+  positive?: boolean;
 }) {
-  const max = Math.max(...items.map((item) => item.value), 1);
   return (
-    <View style={{ gap: 10 }}>
-      <Svg width="100%" height={132} viewBox="0 0 360 132">
-        {items.map((item, index) => {
-          const barHeight = Math.max(8, (item.value / max) * 96);
-          const x = 28 + index * 82;
-          const y = 112 - barHeight;
-          return (
-            <Rect key={item.label} x={x} y={y} width="42" height={barHeight} rx="16" fill={item.color} opacity={index === 0 ? 0.95 : 0.72} />
-          );
-        })}
+    <View style={createStyles(colors).kpi}>
+      <View style={createStyles(colors).kpiTop}>
+        <Text style={createStyles(colors).kpiLabel}>{label}</Text>
+        <MoreHorizontal size={15} color={colors.textFaint} />
+      </View>
+      <Text style={createStyles(colors).kpiValue}>{value}</Text>
+      <Text
+        style={[
+          createStyles(colors).kpiDelta,
+          positive && { color: colors.green },
+        ]}
+      >
+        {positive ? "↗ " : ""}
+        {delta}
+      </Text>
+    </View>
+  );
+}
+
+function BalanceChart({
+  colors,
+  period,
+}: {
+  colors: AppPalette;
+  period: "1m" | "6m" | "1y";
+}) {
+  const values =
+    period === "1m"
+      ? chart.slice(-7)
+      : period === "1y"
+        ? [22, 31, 28, 45, 42, 57, 53, 70, 62, 78, 75, 91]
+        : chart;
+  const points = values
+    .map((v, i) => `${i * (720 / (values.length - 1))},${128 - v}`)
+    .join(" L ");
+  return (
+    <Svg
+      width="100%"
+      height="142"
+      viewBox="0 0 720 142"
+      preserveAspectRatio="none"
+    >
+      <Defs>
+        <LinearGradient id="cash" x1="0" y1="0" x2="0" y2="1">
+          <Stop offset="0" stopColor={colors.accent} stopOpacity="0.36" />
+          <Stop offset="1" stopColor={colors.accent} stopOpacity="0" />
+        </LinearGradient>
+      </Defs>
+      <Path d={`M ${points} L 720 142 L 0 142 Z`} fill="url(#cash)" />
+      <Path
+        d={`M ${points}`}
+        fill="none"
+        stroke={colors.accent}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Circle
+        cx="528"
+        cy="52"
+        r="5"
+        fill={colors.bg}
+        stroke={colors.accent}
+        strokeWidth="3"
+      />
+    </Svg>
+  );
+}
+
+function Donut({ colors }: { colors: AppPalette }) {
+  return (
+    <View
+      style={{
+        width: 112,
+        height: 112,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Svg width="112" height="112" viewBox="0 0 112 112">
+        <Circle
+          cx="56"
+          cy="56"
+          r="42"
+          fill="none"
+          stroke={colors.surfaceSolid}
+          strokeWidth="15"
+        />
+        <Circle
+          cx="56"
+          cy="56"
+          r="42"
+          fill="none"
+          stroke={colors.accent}
+          strokeWidth="15"
+          strokeDasharray="110 264"
+          strokeLinecap="round"
+          rotation="-90"
+          origin="56,56"
+        />
+        <Circle
+          cx="56"
+          cy="56"
+          r="42"
+          fill="none"
+          stroke={colors.green}
+          strokeWidth="15"
+          strokeDasharray="73 264"
+          strokeDashoffset="-116"
+          strokeLinecap="round"
+          rotation="-90"
+          origin="56,56"
+        />
+        <Circle
+          cx="56"
+          cy="56"
+          r="42"
+          fill="none"
+          stroke={colors.blue}
+          strokeWidth="15"
+          strokeDasharray="47 264"
+          strokeDashoffset="-195"
+          strokeLinecap="round"
+          rotation="-90"
+          origin="56,56"
+        />
       </Svg>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
-        {items.map((item) => (
-          <View key={item.label} style={{ flex: 1 }}>
-            <Text style={{ color: colors.textFaint, fontSize: 10, fontWeight: '900', textTransform: 'uppercase' }}>{item.label}</Text>
-            <Text style={{ color: colors.text, fontSize: 12, fontWeight: '900', marginTop: 2 }}>{formatRub(item.value)}</Text>
-          </View>
-        ))}
+      <View style={{ position: "absolute", alignItems: "center" }}>
+        <Text style={{ color: colors.text, fontSize: 17, fontWeight: "800" }}>
+          100%
+        </Text>
+        <Text style={{ color: colors.textFaint, fontSize: 9 }}>план</Text>
       </View>
     </View>
   );
 }
 
-function PlanDonut({ colors, paid, planned, reserve }: { colors: AppPalette; paid: number; planned: number; reserve: number }) {
-  const data = [
-    { label: 'Факт', value: paid, color: colors.red },
-    { label: 'План', value: planned, color: colors.accent },
-    { label: 'Резерв', value: reserve, color: colors.blue },
-  ];
-  const total = Math.max(data.reduce((sum, item) => sum + item.value, 0), 1);
-  const radius = 42;
-  const circumference = 2 * Math.PI * radius;
-  let offset = 0;
-
+function Legend({
+  color,
+  label,
+  value,
+  colors,
+}: {
+  color: string;
+  label: string;
+  value: string;
+  colors: AppPalette;
+}) {
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-      <Svg width={116} height={116} viewBox="0 0 116 116">
-        <Circle cx="58" cy="58" r={radius} stroke={colors.surfaceSoft} strokeWidth="15" fill="none" />
-        {data.map((item) => {
-          const dash = `${circumference * (item.value / total)} ${circumference}`;
-          const currentOffset = offset;
-          offset += circumference * (item.value / total);
-          return (
-            <Circle
-              key={item.label}
-              cx="58"
-              cy="58"
-              r={radius}
-              stroke={item.color}
-              strokeWidth="15"
-              fill="none"
-              strokeDasharray={dash}
-              strokeDashoffset={-currentOffset}
-              strokeLinecap="round"
-              rotation="-90"
-              origin="58,58"
-            />
-          );
-        })}
-      </Svg>
-      <View style={{ flex: 1, gap: 8 }}>
-        {data.map((item) => (
-          <View key={item.label} style={{ flexDirection: 'row', alignItems: 'center', gap: 7 }}>
-            <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: item.color }} />
-            <Text style={{ flex: 1, color: colors.textSoft, fontSize: 12, fontWeight: '800' }}>{item.label}</Text>
-            <Text style={{ color: colors.text, fontSize: 12, fontWeight: '900' }}>{Math.round((item.value / total) * 100)}%</Text>
-          </View>
-        ))}
-      </View>
+    <View style={createStyles(colors).legendRow}>
+      <View
+        style={[createStyles(colors).legendDot, { backgroundColor: color }]}
+      />
+      <Text style={createStyles(colors).legendLabel}>{label}</Text>
+      <Text style={createStyles(colors).legendValue}>{value}</Text>
     </View>
   );
 }
 
+function Payment({
+  item,
+  index,
+  colors,
+}: {
+  item: PlannedItem;
+  index: number;
+  colors: AppPalette;
+}) {
+  const icons = ["学", "签", "保", "住"];
+  return (
+    <View style={createStyles(colors).payment}>
+      <View style={createStyles(colors).paymentIcon}>
+        <Text style={createStyles(colors).paymentIconText}>
+          {icons[index] || "₽"}
+        </Text>
+      </View>
+      <View style={createStyles(colors).paymentCopy}>
+        <Text style={createStyles(colors).paymentTitle} numberOfLines={1}>
+          {item.title}
+        </Text>
+        <Text style={createStyles(colors).paymentDate}>{item.due}</Text>
+      </View>
+      <Text style={createStyles(colors).paymentAmount}>
+        −{formatRub(item.amountMax)}
+      </Text>
+    </View>
+  );
+}
+
+const glass =
+  Platform.OS === "web"
+    ? ({
+        backdropFilter: "blur(24px) saturate(145%)",
+        WebkitBackdropFilter: "blur(24px) saturate(145%)",
+      } as ViewStyle)
+    : {};
 const createStyles = (colors: AppPalette) =>
   StyleSheet.create({
     page: {
-      minHeight: 0,
-    },
-    dashboardGrid: {
       flex: 1,
-      flexDirection: 'row',
-      gap: 12,
       minHeight: 0,
+      padding: 22,
+      gap: 14,
+      backgroundColor: "transparent",
     },
-    dashboardGridCompact: {
-      flexDirection: 'column',
+    titleRow: {
+      flexDirection: "row",
+      alignItems: "flex-end",
+      justifyContent: "space-between",
     },
-    mainColumn: {
-      flex: 1,
-      gap: 12,
-      minWidth: 0,
-      minHeight: 0,
-    },
-    sideColumn: {
-      width: 348,
-      gap: 12,
-      minHeight: 0,
-    },
-    sideColumnCompact: {
-      width: '100%',
-    },
-    topGrid: {
-      marginTop: 8,
-      flexDirection: 'row',
-      gap: 12,
-    },
-    topGridCompact: {
-      flexDirection: 'column',
-    },
-    hero: {
-      flex: 1,
-      padding: 16,
-      minHeight: 204,
-      justifyContent: 'space-between',
-      backgroundColor: colors.mode === 'dark' ? 'rgba(54, 72, 132, 0.24)' : colors.surface,
-      borderColor: colors.borderStrong,
-    },
-    greeting: {
-      marginTop: 4,
-      fontSize: 29,
-      lineHeight: 34,
-    },
-    accentWord: {
-      color: colors.accent,
-    },
-    heroText: {
-      maxWidth: 520,
-      marginTop: 4,
-    },
-    balanceLabel: {
-      marginTop: 14,
-      textTransform: 'uppercase',
-      fontSize: 10,
-      fontWeight: '900',
-    },
-    heroTitle: {
-      marginTop: 3,
+    eyebrow: { color: colors.textFaint, fontSize: 9, fontWeight: "800" },
+    title: {
       color: colors.text,
-      fontSize: 31,
-      lineHeight: 36,
-      fontWeight: '900',
+      fontSize: 25,
+      lineHeight: 30,
+      fontWeight: "700",
+      marginTop: 5,
     },
-    actions: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+    subtitle: { color: colors.textSoft, fontSize: 11, marginTop: 3 },
+    titleActions: { flexDirection: "row", gap: 8 },
+    secondaryButton: {
+      height: 36,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 7,
+      paddingHorizontal: 12,
+    },
+    secondaryText: { color: colors.textSoft, fontSize: 11, fontWeight: "700" },
+    primaryButton: {
+      height: 36,
+      borderRadius: 8,
+      backgroundColor: colors.accent,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 7,
+      paddingHorizontal: 13,
+    },
+    primaryText: { color: "#17130D", fontSize: 11, fontWeight: "800" },
+    kpiRow: { flexDirection: "row", gap: 10 },
+    kpiRowCompact: { gap: 7 },
+    kpi: {
+      flex: 1,
+      minWidth: 0,
+      padding: 12,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      ...glass,
+    },
+    kpiTop: { flexDirection: "row", justifyContent: "space-between" },
+    kpiLabel: { color: colors.textSoft, fontSize: 10, fontWeight: "600" },
+    kpiValue: {
+      color: colors.text,
+      fontSize: 19,
+      fontWeight: "800",
+      marginTop: 8,
+    },
+    kpiDelta: { color: colors.textFaint, fontSize: 9, marginTop: 4 },
+    dashboard: { flex: 1, minHeight: 0, flexDirection: "row", gap: 12 },
+    dashboardCompact: { gap: 8 },
+    mainColumn: { flex: 1, minWidth: 0, gap: 12 },
+    chartRow: { flex: 1.18, minHeight: 226, flexDirection: "row", gap: 12 },
+    sideColumn: { width: 316, gap: 10 },
+    balanceCard: {
+      flex: 1,
+      minHeight: 226,
+      padding: 15,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      ...glass,
+    },
+    cardHeader: {
+      flexDirection: "row",
+      alignItems: "flex-start",
+      justifyContent: "space-between",
+    },
+    cardTitle: { color: colors.text, fontSize: 13, fontWeight: "700" },
+    cardSub: { color: colors.textFaint, fontSize: 9, marginTop: 3 },
+    periods: { flexDirection: "row", alignItems: "center", gap: 4 },
+    period: {
+      color: colors.textFaint,
+      fontSize: 9,
+      paddingHorizontal: 8,
+      paddingVertical: 5,
+    },
+    periodActive: {
+      color: colors.text,
+      fontSize: 9,
+      fontWeight: "700",
+      paddingHorizontal: 9,
+      paddingVertical: 5,
+      borderRadius: 6,
+      backgroundColor: colors.surfaceSolid,
+    },
+    chartValueRow: {
+      flexDirection: "row",
+      alignItems: "center",
       gap: 8,
       marginTop: 11,
     },
-    actionButton: {
-      minHeight: 38,
-      borderRadius: 8,
-      paddingHorizontal: 13,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 7,
-      backgroundColor: colors.accent,
-      shadowColor: colors.glow,
-      shadowOpacity: 1,
-      shadowRadius: 16,
-      shadowOffset: { width: 0, height: 8 },
+    chartValue: { color: colors.text, fontSize: 22, fontWeight: "800" },
+    growth: { color: colors.green, fontSize: 10, fontWeight: "700" },
+    chartFooter: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginTop: -3,
     },
-    actionButtonSoft: {
-      minHeight: 38,
+    axis: { color: colors.textFaint, fontSize: 8 },
+    bottomGrid: { flex: 0.82, minHeight: 180, flexDirection: "row", gap: 12 },
+    spendingCard: {
+      flex: 1.25,
+      padding: 14,
       borderRadius: 8,
-      paddingHorizontal: 13,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 7,
-      backgroundColor: colors.surfaceSoft,
       borderWidth: 1,
       borderColor: colors.border,
+      backgroundColor: colors.surface,
+      ...glass,
     },
-    actionText: {
-      color: '#FFFFFF',
-      fontWeight: '900',
-      fontSize: 12,
+    donutContent: {
+      flex: 1,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-around",
+      gap: 12,
     },
-    actionTextSoft: {
-      color: colors.text,
-      fontWeight: '900',
-      fontSize: 12,
+    legend: { minWidth: 120, gap: 8 },
+    legendRow: { flexDirection: "row", alignItems: "center", gap: 7 },
+    legendDot: { width: 7, height: 7, borderRadius: 2 },
+    legendLabel: { flex: 1, color: colors.textSoft, fontSize: 10 },
+    legendValue: { color: colors.text, fontSize: 10, fontWeight: "800" },
+    goalCard: {
+      flex: 0.75,
+      padding: 15,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      ...glass,
     },
-    progressCard: {
+    forecastCard: {
       width: 210,
-      alignItems: 'center',
-      justifyContent: 'space-between',
       padding: 14,
-      minHeight: 204,
-      backgroundColor: colors.mode === 'dark' ? 'rgba(65, 84, 148, 0.26)' : colors.surface,
-    },
-    progressCardCompact: {
-      width: '100%',
-      gap: 12,
-    },
-    datePill: {
-      alignSelf: 'stretch',
-      minHeight: 36,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 7,
-      backgroundColor: colors.surfaceSoft,
+      backgroundColor: colors.surface,
+      ...glass,
     },
-    dateText: {
+    forecastLabel: { color: colors.textFaint, fontSize: 8, fontWeight: "900" },
+    forecastValue: {
+      color: colors.accent,
+      fontSize: 38,
+      fontWeight: "900",
+      marginTop: 10,
+    },
+    forecastOf: { color: colors.textFaint, fontSize: 8 },
+    healthTrack: {
+      height: 5,
+      borderRadius: 3,
+      backgroundColor: colors.surfaceSolid,
+      marginTop: 12,
+      overflow: "hidden",
+    },
+    healthFill: { width: "74%", height: "100%", backgroundColor: colors.green },
+    forecastTitle: {
       color: colors.text,
-      fontWeight: '900',
-      fontSize: 12,
+      fontSize: 11,
+      fontWeight: "800",
+      marginTop: 12,
     },
-    orbit: {
-      width: 84,
-      height: 84,
-      borderRadius: 42,
-      borderWidth: 10,
-      borderColor: colors.accent,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: colors.accentSoft,
-      shadowColor: colors.glow,
-      shadowOpacity: 1,
-      shadowRadius: 18,
-      shadowOffset: { width: 0, height: 8 },
-    },
-    orbitValue: {
-      color: colors.text,
-      fontSize: 21,
-      fontWeight: '900',
-    },
-    orbitLabel: {
+    forecastText: {
       color: colors.textFaint,
-      fontSize: 10,
-      fontWeight: '900',
-      textTransform: 'uppercase',
+      fontSize: 8,
+      lineHeight: 12,
+      marginTop: 4,
     },
-    metrics: {
-      flexDirection: 'row',
-      gap: 10,
+    forecastAction: {
+      marginTop: "auto",
+      height: 29,
+      borderRadius: 6,
+      backgroundColor: colors.accentSoft,
+      alignItems: "center",
+      justifyContent: "center",
     },
-    metricsCompact: {
-      flexDirection: 'column',
+    forecastActionText: {
+      color: colors.accent,
+      fontSize: 8,
+      fontWeight: "800",
     },
-    analyticsGrid: {
-      flex: 1,
-      flexDirection: 'row',
-      gap: 12,
-      minHeight: 0,
-    },
-    analyticsGridCompact: {
-      flexDirection: 'column',
-    },
-    chartCard: {
-      flex: 1,
+    commitmentCard: {
+      flex: 0.68,
+      minWidth: 150,
       padding: 14,
-      gap: 12,
-      minHeight: 216,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      ...glass,
     },
-    cardHead: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 10,
+    commitmentValue: {
+      color: colors.text,
+      fontSize: 30,
+      fontWeight: "900",
+      marginTop: 9,
     },
-    cardTitle: {
+    commitmentTitle: { color: colors.textSoft, fontSize: 9, marginTop: 1 },
+    commitmentRows: { gap: 8, marginTop: 12 },
+    commitmentMeta: { color: colors.textFaint, fontSize: 7 },
+    commitmentStrong: {
+      color: colors.text,
+      fontSize: 9,
+      fontWeight: "800",
+      marginTop: 2,
+    },
+    goalIcon: {
+      width: 36,
+      height: 36,
+      borderRadius: 8,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: colors.accent,
+    },
+    goalLabel: {
+      color: colors.textFaint,
+      fontSize: 8,
+      fontWeight: "800",
+      marginTop: 12,
+    },
+    goalTitle: {
       color: colors.text,
       fontSize: 15,
-      fontWeight: '900',
+      fontWeight: "800",
+      marginTop: 4,
     },
-    cardHint: {
-      color: colors.textFaint,
-      fontSize: 11,
-      fontWeight: '800',
+    goalMeta: { color: colors.textSoft, fontSize: 9, marginTop: 4 },
+    progressTrack: {
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: colors.surfaceSolid,
+      marginTop: "auto",
+      overflow: "hidden",
+    },
+    progressFill: {
+      height: "100%",
+      borderRadius: 3,
+      backgroundColor: colors.accent,
+    },
+    progressLabels: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginTop: 7,
+    },
+    progressStrong: { color: colors.text, fontSize: 9, fontWeight: "700" },
+    progressWeak: { color: colors.textFaint, fontSize: 9 },
+    cardVisual: {
+      minHeight: 154,
+      borderRadius: 8,
+      padding: 16,
+      backgroundColor: colors.accent,
+    },
+    cardTop: { flexDirection: "row", justifyContent: "space-between" },
+    cardBrand: { color: "#17130D", fontSize: 14, fontWeight: "900" },
+    cardType: {
+      color: "rgba(23,19,13,.55)",
+      fontSize: 7,
+      fontWeight: "800",
+      marginTop: 1,
+    },
+    cardBalanceLabel: {
+      color: "rgba(23,19,13,.58)",
+      fontSize: 9,
+      marginTop: 18,
+    },
+    cardBalance: {
+      color: "#17130D",
+      fontSize: 24,
+      fontWeight: "800",
       marginTop: 2,
     },
-    cardBadge: {
-      color: colors.text,
-      overflow: 'hidden',
+    cardBottom: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginTop: "auto",
+    },
+    cardNumber: { color: "#17130D", fontSize: 10, fontWeight: "700" },
+    cardCurrency: { color: "#17130D", fontSize: 10, fontWeight: "800" },
+    transferRow: { flexDirection: "row", gap: 8 },
+    transferButton: {
+      flex: 1,
+      height: 36,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
-      paddingHorizontal: 9,
-      paddingVertical: 5,
-      fontSize: 11,
-      fontWeight: '900',
+      backgroundColor: colors.surface,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 6,
     },
-    aiCard: {
-      minHeight: 208,
+    transferPrimary: {
+      backgroundColor: colors.accent,
+      borderColor: colors.accent,
+    },
+    transferText: { color: colors.text, fontSize: 10, fontWeight: "700" },
+    transferPrimaryText: { color: "#17130D", fontSize: 10, fontWeight: "800" },
+    upcomingCard: {
+      flex: 1,
+      minHeight: 0,
       padding: 14,
-      gap: 12,
-      backgroundColor: colors.mode === 'dark' ? 'rgba(70, 83, 150, 0.28)' : colors.surface,
-    },
-    aiTitleRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 10,
-    },
-    aiIcon: {
-      width: 34,
-      height: 34,
-      borderRadius: 8,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: colors.accentSoft,
-      borderWidth: 1,
-      borderColor: colors.border,
-    },
-    aiBubble: {
       borderRadius: 8,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
-      padding: 11,
+      backgroundColor: colors.surface,
+      ...glass,
     },
-    aiBubbleText: {
+    allLink: { color: colors.accent, fontSize: 10, fontWeight: "700" },
+    paymentScroll: { flex: 1, marginTop: 9 },
+    payment: {
+      height: 47,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 9,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+    },
+    paymentIcon: {
+      width: 29,
+      height: 29,
+      borderRadius: 7,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: colors.surfaceSolid,
+    },
+    paymentIconText: {
       color: colors.textSoft,
-      fontSize: 12,
-      lineHeight: 17,
-      fontWeight: '700',
-    },
-    aiInputRow: {
-      minHeight: 40,
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.mode === 'dark' ? 'rgba(6, 10, 28, 0.36)' : colors.surfaceSoft,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 8,
-      paddingLeft: 12,
-      paddingRight: 5,
-    },
-    aiInput: {
-      flex: 1,
-      color: colors.text,
-      fontSize: 12,
-      fontWeight: '800',
-    },
-    aiPlaceholder: {
-      color: colors.textFaint,
-    },
-    aiSend: {
-      width: 31,
-      height: 31,
-      borderRadius: 8,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: colors.accent,
-    },
-    paymentsCard: {
-      flex: 1,
-      minHeight: 0,
-      padding: 14,
-      gap: 10,
-    },
-    paymentsScroll: {
-      flex: 1,
-      minHeight: 0,
-    },
-    paymentsContent: {
-      gap: 8,
-      paddingBottom: 2,
-    },
-    paymentRow: {
-      minHeight: 56,
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.surfaceSoft,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 10,
-      paddingHorizontal: 10,
-      paddingVertical: 8,
-    },
-    paymentDot: {
-      width: 8,
-      height: 8,
-      borderRadius: 4,
-      backgroundColor: colors.accent,
-    },
-    paymentDotIncome: {
-      backgroundColor: colors.green,
-    },
-    paymentCopy: {
-      flex: 1,
-      minWidth: 0,
-    },
-    paymentTitle: {
-      color: colors.text,
-      fontSize: 13,
-      fontWeight: '900',
-    },
-    paymentMeta: {
-      color: colors.textFaint,
       fontSize: 11,
-      fontWeight: '800',
-      marginTop: 2,
+      fontWeight: "800",
     },
-    paymentAmount: {
-      color: colors.text,
-      fontSize: 12,
-      fontWeight: '900',
-      textAlign: 'right',
-      maxWidth: 112,
+    paymentCopy: { flex: 1, minWidth: 0 },
+    paymentTitle: { color: colors.text, fontSize: 10, fontWeight: "700" },
+    paymentDate: { color: colors.textFaint, fontSize: 8, marginTop: 2 },
+    paymentAmount: { color: colors.red, fontSize: 10, fontWeight: "700" },
+    scheduleButton: {
+      height: 32,
+      marginTop: 8,
+      borderRadius: 7,
+      backgroundColor: colors.surfaceSolid,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 5,
     },
-    paymentIncome: {
-      color: colors.green,
-    },
+    scheduleText: { color: colors.textSoft, fontSize: 9, fontWeight: "700" },
   });

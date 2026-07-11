@@ -1,5 +1,5 @@
 export const formatRub = (value: number) =>
-  `${Math.round(value).toLocaleString('ru-RU')} ₽`;
+  `${Math.round(value).toLocaleString("ru-RU")} ₽`;
 
 export const formatRange = (min: number, max: number) => {
   if (Math.round(min) === Math.round(max)) {

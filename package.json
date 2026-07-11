@@ -6,8 +6,10 @@
     "@expo/metro-runtime": "~57.0.2",
     "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~57.0.1",
+    "expo-crypto": "~57.0.0",
     "expo-linear-gradient": "~57.0.0",
     "expo-status-bar": "~57.0.0",
+    "expo-video": "~57.0.0",
     "lucide-react-native": "^1.22.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -16,14 +18,26 @@
     "react-native-web": "^0.21.2"
   },
   "devDependencies": {
+    "@storybook/react-native-web-vite": "^10.5.0",
     "@types/react": "~19.2.2",
-    "typescript": "~6.0.3"
+    "prettier": "^3.9.5",
+    "storybook": "^10.5.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "import:operations": "node scripts/import-operations.cjs",
+    "api:dev": "npm --prefix server run dev",
+    "api:build": "npm --prefix server run build",
+    "api:check": "npm --prefix server run typecheck",
+    "api:generate": "npm --prefix server run prisma:generate"
   },
   "private": true
 }
