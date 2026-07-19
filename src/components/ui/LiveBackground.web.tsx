@@ -2,7 +2,10 @@ import { createElement } from "react";
 import type { AppPalette } from "../../theme/tokens";
 
 export function LiveBackground({ colors }: { colors: AppPalette }) {
-  const asset = require("../../../assets/nova-particle-loop.mp4");
+  const asset =
+    colors.mode === "light"
+      ? require("../../../assets/nova-light-wave-loop.mp4")
+      : require("../../../assets/nova-particle-loop.mp4");
   const src = typeof asset === "string" ? asset : (asset?.uri ?? asset);
 
   return createElement("video", {
@@ -19,11 +22,7 @@ export function LiveBackground({ colors }: { colors: AppPalette }) {
       width: "100%",
       height: "100%",
       objectFit: "cover",
-      opacity: colors.mode === "dark" ? 0.9 : 0.62,
-      filter:
-        colors.mode === "light"
-          ? "brightness(1.35) saturate(.72) contrast(.82)"
-          : "none",
+      opacity: colors.mode === "dark" ? 0.9 : 1,
       pointerEvents: "none",
     },
   });

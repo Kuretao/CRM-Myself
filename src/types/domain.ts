@@ -116,6 +116,7 @@ export type AppData = {
 };
 
 export type AnalyticsTotals = {
+  currentBalance: number;
   income: number;
   fixedExpenses: number;
   plannedMin: number;

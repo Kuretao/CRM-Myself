@@ -12,6 +12,7 @@ import { Surface } from "../components/ui/Surface";
 import { TextField } from "../components/ui/TextField";
 import type { AppPalette } from "../theme/tokens";
 import type { MoneyType, PlannedItem } from "../types/domain";
+import { isPaidTuitionPlan } from "../utils/finance";
 import { formatRange, formatRub } from "../utils/format";
 type Props = {
   colors: AppPalette;
@@ -29,8 +30,9 @@ type Props = {
 };
 export function PlanningPage(p: Props) {
   const s = css(p.colors);
-  const active = p.plannedItems.filter((x) => x.status === "planned");
-  const paid = p.plannedItems.filter((x) => x.status === "paid");
+  const plannedItems = p.plannedItems.filter((item) => !isPaidTuitionPlan(item));
+  const active = plannedItems.filter((x) => x.status === "planned");
+  const paid = plannedItems.filter((x) => x.status === "paid");
   const total = active.reduce((a, x) => a + x.amountMax, 0);
   const add = () => {
     if (!p.title.trim() || Number(p.amount.replace(",", ".")) <= 0)
@@ -68,12 +70,12 @@ export function PlanningPage(p: Props) {
             </View>
             <CalendarClock size={19} color={p.colors.accent} />
           </View>
-          {p.plannedItems.map((x, i) => (
+          {plannedItems.map((x, i) => (
             <View key={x.id} style={s.item}>
               <View
                 style={[
                   s.line,
-                  i === p.plannedItems.length - 1 && { opacity: 0 },
+                  i === plannedItems.length - 1 && { opacity: 0 },
                 ]}
               />
               <View style={[s.dot, x.status === "paid" && s.dotDone]}>
@@ -145,7 +147,7 @@ export function PlanningPage(p: Props) {
           <Button colors={p.colors} label="Сохранить план" onPress={add} />
         </Surface>
       </View>
-      <CalendarMonth colors={p.colors} items={p.plannedItems} />
+      <CalendarMonth colors={p.colors} items={plannedItems} />
     </View>
   );
 }

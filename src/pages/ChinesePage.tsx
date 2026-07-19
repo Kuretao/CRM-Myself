@@ -13,6 +13,7 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { PracticeNotebook } from "../features/chinese/components/PracticeNotebook";
+import { SpeakButton } from "../features/chinese/components/SpeakButton";
 import { StudySession } from "../features/chinese/components/StudySession";
 import { lessons, radicals, vocabulary } from "../features/chinese/data/course";
 import type { ChineseLesson } from "../features/chinese/types";
@@ -253,6 +254,10 @@ function LessonsView({
                 <Text style={s.wordRu}>{word.russian}</Text>
                 <Text style={s.wordEn}>{word.english}</Text>
               </View>
+              <View style={s.wordAudio}>
+                <SpeakButton colors={colors} text={word.hanzi} compact />
+                <SpeakButton colors={colors} text={word.pinyin} pinyin compact />
+              </View>
               <Pressable onPress={() => onSave(word.id)}>
                 <Star
                   size={14}
@@ -268,8 +273,16 @@ function LessonsView({
         <Text style={s.sectionTitle}>Полезные фразы</Text>
         {selected.phrases.map((phrase) => (
           <View key={phrase.zh} style={s.phrase}>
-            <Text style={s.phraseZh}>{phrase.zh}</Text>
-            <Text style={s.phrasePinyin}>{phrase.pinyin}</Text>
+            <View style={s.phraseHead}>
+              <View style={{ flex: 1 }}>
+                <Text style={s.phraseZh}>{phrase.zh}</Text>
+                <Text style={s.phrasePinyin}>{phrase.pinyin}</Text>
+              </View>
+              <View style={s.phraseAudio}>
+                <SpeakButton colors={colors} text={phrase.zh} compact />
+                <SpeakButton colors={colors} text={phrase.pinyin} pinyin compact />
+              </View>
+            </View>
             <View style={s.translationRow}>
               <Text style={s.phraseEn}>{phrase.en}</Text>
               <ArrowRight size={11} color={colors.textFaint} />
@@ -453,7 +466,13 @@ function TranslationStep({
       <Text style={[s.stepValue, code === "中文" && s.stepChinese]}>
         {value}
       </Text>
-      {sub && <Text style={s.stepSub}>{sub}</Text>}
+      {sub && (
+        <View style={s.stepAudioRow}>
+          <Text style={s.stepSub}>{sub}</Text>
+          <SpeakButton colors={colors} text={value} compact />
+          <SpeakButton colors={colors} text={sub} pinyin compact />
+        </View>
+      )}
     </View>
   );
 }
@@ -517,7 +536,10 @@ function Dictionary({
       {filtered.map((item) => (
         <View key={item.id} style={s.tableRow}>
           <Text style={[s.tdHanzi, { flex: 0.5 }]}>{item.hanzi}</Text>
-          <Text style={s.tdPinyin}>{item.pinyin}</Text>
+          <View style={s.dictionaryPinyin}>
+            <Text style={s.tdPinyin}>{item.pinyin}</Text>
+            <SpeakButton colors={colors} text={item.hanzi} compact />
+          </View>
           <Text style={s.td}>{item.russian}</Text>
           <Text style={s.td}>{item.english}</Text>
           <View style={{ flex: 0.5 }}>
@@ -713,6 +735,7 @@ const css = (c: AppPalette) =>
     wordHanzi: { color: c.text, fontSize: 20, fontWeight: "700" },
     wordPinyin: { color: c.accent, fontSize: 8, marginTop: 2 },
     wordCopy: { flex: 1 },
+    wordAudio: { flexDirection: "row", gap: 4 },
     wordRu: { color: c.text, fontSize: 9, fontWeight: "700" },
     wordEn: { color: c.textFaint, fontSize: 8, marginTop: 3 },
     phrase: {
@@ -723,6 +746,8 @@ const css = (c: AppPalette) =>
       borderColor: c.border,
       marginBottom: 7,
     },
+    phraseHead: { flexDirection: "row", gap: 8 },
+    phraseAudio: { flexDirection: "row", gap: 4, alignItems: "flex-start" },
     phraseZh: { color: c.text, fontSize: 17, fontWeight: "700" },
     phrasePinyin: { color: c.accent, fontSize: 9, marginTop: 3 },
     translationRow: {
@@ -819,6 +844,7 @@ const css = (c: AppPalette) =>
     stepValue: { color: c.text, fontSize: 13, fontWeight: "700", marginTop: 5 },
     stepChinese: { fontSize: 24 },
     stepSub: { color: c.accent, fontSize: 9, marginTop: 4 },
+    stepAudioRow: { flexDirection: "row", alignItems: "center", gap: 4, marginTop: 2 },
     emptyResult: {
       flex: 1,
       alignItems: "center",
@@ -883,6 +909,7 @@ const css = (c: AppPalette) =>
     },
     tdHanzi: { color: c.text, fontSize: 18, fontWeight: "700" },
     tdPinyin: { flex: 1, color: c.accent, fontSize: 9, fontWeight: "700" },
+    dictionaryPinyin: { flex: 1, flexDirection: "row", alignItems: "center", gap: 5 },
     td: { flex: 1, color: c.textSoft, fontSize: 8 },
     hsk: {
       alignSelf: "flex-start",

@@ -1,0 +1,1106 @@
+Starting project at C:\Users\bogda\Documents\GitHub\chengdu-life-manager
+Using src/app as the root directory for Expo Router.
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+An update for expo is available: 57.0.1 → ~57.0.6
+6 other packages may need updating. Run npx expo install --check for details.
+Logs for your project will appear below.
+Web Bundled 634ms index.ts (2042 modules)
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  WARN  TouchableMixin is deprecated. Please use Pressable.
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: LineChart.tsx
+[0m [90m 56 |[39m           [33m/[39m[33m>[39m
+ [90m 57 |[39m           {points[33m.[39mmap((point[33m,[39m index) [33m=>[39m (
+[31m[1m>[22m[39m[90m 58 |[39m             [33m<[39m[33mCircle[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 59 |[39m               key[33m=[39m{point[33m.[39mlabel}
+ [90m 60 |[39m               cx[33m=[39m{point[33m.[39mx}
+ [90m 61 |[39m               cy[33m=[39m{point[33m.[39my}[0m
+Call Stack
+  points.map$argument_0 (src\features\reports\components\LineChart.tsx:58:13)
+  LineChart (src\features\reports\components\LineChart.tsx:57:19)
+  ReportsPage (src\pages\ReportsPage.tsx:93:11)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: DonutChart.tsx
+[0m [90m 43 |[39m             offset [33m+=[39m circumference [33m*[39m percent[33m;[39m
+ [90m 44 |[39m             [36mreturn[39m (
+[31m[1m>[22m[39m[90m 45 |[39m               [33m<[39m[33mCircle[39m
+ [90m    |[39m               [31m[1m^[22m[39m
+ [90m 46 |[39m                 key[33m=[39m{item[33m.[39mlabel}
+ [90m 47 |[39m                 cx[33m=[39m[32m"60"[39m
+ [90m 48 |[39m                 cy[33m=[39m[32m"60"[39m[0m
+Call Stack
+  data.map$argument_0 (src\features\reports\components\DonutChart.tsx:45:15)
+  DonutChart (src\features\reports\components\DonutChart.tsx:39:17)
+  ReportsPage (src\pages\ReportsPage.tsx:114:9)
+  AppShell (src\app\AppShell.tsx:389:9)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  ERROR  Unexpected text node:  . A text node cannot be a child of a <View>. 
+
+Code: ChinesePage.tsx
+[0m [90m 71 |[39m     )[33m;[39m
+ [90m 72 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 73 |[39m     [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mpage}[33m>[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 74 |[39m       [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mhead}[33m>[39m
+ [90m 75 |[39m         [33m<[39m[33mView[39m[33m>[39m
+ [90m 76 |[39m           [33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mkicker}[33m>[39m中文 [33mLEARNING[39m [33mSPACE[39m[33m<[39m[33m/[39m[33mText[39m[33m>[39m[0m
+Call Stack
+  ChinesePage (src\pages\ChinesePage.tsx:73:5)
+  AppShell (src\app\AppShell.tsx:412:35)
+  App (App.tsx:4:10)
+Web  WARN  An error occurred in the <FlowChart> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [ReferenceError: s is not defined] 
+
+Code: OverviewPage.tsx
+[0m [90m 238 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 239 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 240 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                       [31m[1m^[22m[39m
+ [90m 241 |[39m }
+ [90m 242 |[39m
+ [90m 243 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  FlowChart (src\pages\OverviewPage.tsx:240:23) 
+
+Code: OverviewPage.tsx
+[0m [90m 200 |[39m   [36mconst[39m stages [33m=[39m [
+ [90m 201 |[39m     { title[33m:[39m [32m"Документы и регистрация"[39m[33m,[39m meta[33m:[39m [32m"Нотариус и сбор оплачены"[39m[33m,[39m done[33m:[39m [36mtrue[39m }[33m,[39m
+[31m[1m>[22m[39m[90m 202 |[39m     { title[33m:[39m [32m"Перелёт в Чэнду"[39m[33m,[39m meta[33m:[39m [32m"Билет и маршрут"[39m[33m,[39m done[33m:[39m [36mfalse[39m }[33m,[39m
+ [90m     |[39m                                                        [31m[1m^[22m[39m
+ [90m 203 |[39m     { title[33m:[39m [32m"Общежитие"[39m[33m,[39m meta[33m:[39m [32m"Первые два месяца"[39m[33m,[39m done[33m:[39m [36mfalse[39m }[33m,[39m
+ [90m 204 |[39m     { title[33m:[39m [32m"Финансовый резерв"[39m[33m,[39m meta[33m:[39m [32m"Резерв на адаптацию"[39m[33m,[39m done[33m:[39m [36mfalse[39m }[33m,[39m
+ [90m 205 |[39m   ][33m;[39m[0m
+Call Stack
+  MoveView (src\pages\OverviewPage.tsx:202:56)
+  MoneyView (src\pages\OverviewPage.tsx:191:79)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web Bundled 46ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  WARN  TouchableMixin is deprecated. Please use Pressable.
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web Bundled 36ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  WARN  TouchableMixin is deprecated. Please use Pressable.
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web Bundled 37ms index.ts (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web Bundled 33ms index.ts (1 module)
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  WARN  TouchableMixin is deprecated. Please use Pressable.
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web Bundled 37ms index.ts (1 module)
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  WARN  TouchableMixin is deprecated. Please use Pressable.
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)
+Web  ERROR  
+
+Code: OverviewPage.tsx
+[0m [90m 239 |[39m   [36mconst[39m points [33m=[39m coordinates[33m.[39mmap((point) [33m=>[39m [32m`${point.x},${point.y}`[39m)[33m.[39mjoin([32m" L "[39m)[33m;[39m
+ [90m 240 |[39m   [36mconst[39m selected [33m=[39m coordinates[[33mMath[39m[33m.[39mmin(selectedIndex[33m,[39m coordinates[33m.[39mlength [33m-[39m [35m1[39m)][33m;[39m
+[31m[1m>[22m[39m[90m 241 |[39m   [36mreturn[39m [33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartInteractive}[33m>[39m[33m<[39m[33mView[39m style[33m=[39m{s[33m.[39mchartBadge}[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeLabel}[33m>[39m{data[selectedIndex][33m?[39m[33m.[39mlabel [33m||[39m [32m"Сейчас"[39m}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33mText[39m style[33m=[39m{s[33m.[39mchartBadgeValue}[33m>[39m{formatRub(data[selectedIndex][33m?[39m[33m.[39mvalue [33m||[39m [35m0[39m)}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[35m/View><Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"><Defs><LinearGradient id={compact ? "flow-small" : "flow-main"} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={colors.accent} stopOpacity=".24" /[39m[33m>[39m[33m<[39m[33mStop[39m offset[33m=[39m[32m"1"[39m stopColor[33m=[39m{colors[33m.[39maccent} stopOpacity[33m=[39m[32m"0"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mLinearGradient[39m[33m>[39m[33m<[39m[35m/Defs><Path d={`M ${points} L ${width} ${height} L 0 ${height} Z`} fill={`url(#${compact ? "flow-small" : "flow-main"})`} /[39m[33m>[39m[33m<[39m[33mPath[39m d[33m=[39m{[32m`M ${points}`[39m} fill[33m=[39m[32m"none"[39m stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m strokeLinecap[33m=[39m[32m"round"[39m strokeLinejoin[33m=[39m[32m"round"[39m [35m/>{selected && <G><Line x1={selected.x} x2={selected.x} y1="0" y2={height} stroke={colors.borderStrong} strokeWidth="1" strokeDasharray="4 5" /[39m[33m>[39m[33m<[39m[33mCircle[39m cx[33m=[39m{selected[33m.[39mx} cy[33m=[39m{selected[33m.[39my} r[33m=[39m[32m"5"[39m fill[33m=[39m{colors[33m.[39msurfaceSolid} stroke[33m=[39m{colors[33m.[39maccent} strokeWidth[33m=[39m[32m"3"[39m [33m/[39m[33m>[39m[33m<[39m[33m/[39m[33mG[39m[33m>[39m}{coordinates[33m.[39mmap((point[33m,[39m index) [33m=>[39m [33m<[39m[33mRect[39m key[33m=[39m{index} x[33m=[39m{[33mMath[39m[33m.[39mmax([35m0[39m[33m,[39m point[33m.[39mx [33m-[39m width [33m/[39m [33mMath[39m[33m.[39mmax(values[33m.[39mlength[33m,[39m [35m1[39m) [33m/[39m [35m2[39m)} y[33m=[39m[32m"0"[39m width[33m=[39m{width [35m/ Math.max(values.length, 1)} height={height} fill="transparent" onPress={() => setSelectedIndex(index)} /[39m[33m>[39m)}[33m<[39m[33m/[39m[33mSvg[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m
+ [90m     |[39m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [31m[1m^[22m[39m
+ [90m 242 |[39m }
+ [90m 243 |[39m
+ [90m 244 |[39m [36mconst[39m blur [33m=[39m [33mPlatform[39m[33m.[39m[33mOS[39m [33m===[39m [32m"web"[39m [33m?[39m ({ backdropFilter[33m:[39m [32m"blur(32px) saturate(125%)"[39m[33m,[39m [33mWebkitBackdropFilter[39m[33m:[39m [32m"blur(32px) saturate(125%)"[39m } [36mas[39m [33mViewStyle[39m) [33m:[39m {}[33m;[39m[0m
+Call Stack
+  coordinates.map$argument_0 (src\pages\OverviewPage.tsx:241:1111)
+  FlowChart (src\pages\OverviewPage.tsx:241:1089)
+  FocusView (src\pages\OverviewPage.tsx:160:9)
+  OverviewPage (src\pages\OverviewPage.tsx:138:32)
+  AppShell (src\app\AppShell.tsx:346:9)
+  App (App.tsx:4:10)

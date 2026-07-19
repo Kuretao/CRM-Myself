@@ -41,7 +41,11 @@ import {
   buildScenarioRows,
   buildTaskStatusShare,
 } from "../utils/analytics";
-import { calculateTotals, groupExpensesByCategory } from "../utils/finance";
+import {
+  calculateTotals,
+  groupExpensesByCategory,
+  isLegacyTuitionEstimate,
+} from "../utils/finance";
 import {
   clearAuthSession,
   hasRememberedSession,
@@ -70,6 +74,7 @@ export function AppShell() {
   const [plannedType, setPlannedType] = useState<MoneyType>("expense");
   const [aiDraft, setAiDraft] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchRequest, setSearchRequest] = useState(0);
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const { width } = useWindowDimensions();
@@ -124,24 +129,29 @@ export function AppShell() {
     saveAppData(data).catch(() => undefined);
   }, [data]);
 
+  const transactions = useMemo(
+    () => data.transactions.filter((item) => !isLegacyTuitionEstimate(item)),
+    [data.transactions],
+  );
+
   const totals = useMemo(
-    () => calculateTotals(data.transactions, data.plannedItems, data.tasks),
-    [data.plannedItems, data.tasks, data.transactions],
+    () => calculateTotals(transactions, data.plannedItems, data.tasks, data.accounts),
+    [data.accounts, data.plannedItems, data.tasks, transactions],
   );
 
   const chartItems = useMemo(
-    () => groupExpensesByCategory(data.transactions, data.plannedItems),
-    [data.plannedItems, data.transactions],
+    () => groupExpensesByCategory(transactions, data.plannedItems),
+    [data.plannedItems, transactions],
   );
 
   const cashflow = useMemo(
-    () => buildCashflowSeries(data.transactions, data.plannedItems),
-    [data.plannedItems, data.transactions],
+    () => buildCashflowSeries(transactions, data.plannedItems, data.accounts),
+    [data.accounts, data.plannedItems, transactions],
   );
 
   const scenarios = useMemo(
-    () => buildScenarioRows(data.transactions, data.plannedItems),
-    [data.plannedItems, data.transactions],
+    () => buildScenarioRows(transactions, data.plannedItems, data.accounts),
+    [data.accounts, data.plannedItems, transactions],
   );
 
   const taskShare = useMemo(
@@ -152,7 +162,7 @@ export function AppShell() {
     const query = searchQuery.trim().toLowerCase();
     if (!query) return [];
     return [
-      ...data.transactions.map((item) => ({
+      ...transactions.map((item) => ({
         id: item.id,
         title: item.title,
         meta: `${item.category} · ${item.date}`,
@@ -175,7 +185,7 @@ export function AppShell() {
         `${item.title} ${item.meta}`.toLowerCase().includes(query),
       )
       .slice(0, 6);
-  }, [data.plannedItems, data.tasks, data.transactions, searchQuery]);
+  }, [data.plannedItems, data.tasks, searchQuery, transactions]);
 
   const navigate = (tab: TabName) => {
     setActiveTab(tab);
@@ -346,6 +356,7 @@ export function AppShell() {
           colors={colors}
           profile={data.profile}
           totals={totals}
+          cashflow={cashflow}
           planned={data.plannedItems}
           aiDraft={aiDraft}
           onChangeAiDraft={setAiDraft}
@@ -357,7 +368,7 @@ export function AppShell() {
       {activeTab === "finance" && (
         <FinancePage
           colors={colors}
-          transactions={data.transactions}
+          transactions={transactions}
           chartItems={chartItems}
           transactionTitle={transactionTitle}
           transactionAmount={transactionAmount}
@@ -465,16 +476,19 @@ export function AppShell() {
               collapsed={isSidebarCollapsed}
               onToggleCollapsed={() => setSidebarCollapsed((value) => !value)}
               onChangeTab={setActiveTab}
+              onOpenSearch={() => setSearchRequest((value) => value + 1)}
             />
             <View style={styles.desktopWorkspace}>
               <AppHeader
                 colors={colors}
+                activeTab={activeTab}
                 themeName={data.themeName}
                 profileName={data.profile.name}
                 query={searchQuery}
                 results={searchResults}
                 profileOpen={profileOpen}
                 notificationsOpen={notificationsOpen}
+                searchRequest={searchRequest}
                 onQuery={setSearchQuery}
                 onToggleTheme={toggleTheme}
                 onToggleProfile={() => {
@@ -516,12 +530,14 @@ export function AppShell() {
       <Screen colors={colors} scroll={false}>
         <AppHeader
           colors={colors}
+          activeTab={activeTab}
           themeName={data.themeName}
           profileName={data.profile.name}
           query={searchQuery}
           results={searchResults}
           profileOpen={profileOpen}
           notificationsOpen={notificationsOpen}
+          searchRequest={searchRequest}
           onQuery={setSearchQuery}
           onToggleTheme={toggleTheme}
           onToggleProfile={() => setProfileOpen((v) => !v)}

@@ -32,8 +32,8 @@ const createStyles = (colors: AppPalette) =>
       borderRadius: 8,
       backgroundColor:
         colors.mode === "dark"
-          ? "rgba(7, 17, 38, 0.54)"
-          : "rgba(255,255,255,0.66)",
+          ? "rgba(17, 22, 29, 0.66)"
+          : "rgba(250, 251, 252, 0.72)",
       shadowColor: colors.shadow,
       shadowOpacity: 1,
       shadowRadius: 28,
@@ -41,8 +41,8 @@ const createStyles = (colors: AppPalette) =>
       elevation: 6,
       ...(Platform.OS === "web"
         ? ({
-            backdropFilter: "blur(28px) saturate(135%)",
-            WebkitBackdropFilter: "blur(28px) saturate(135%)",
+            backdropFilter: "blur(30px) saturate(112%)",
+            WebkitBackdropFilter: "blur(30px) saturate(112%)",
           } as ViewStyle)
         : {}),
     },

@@ -3,8 +3,12 @@ import { StyleSheet } from "react-native";
 import type { AppPalette } from "../../theme/tokens";
 
 export function LiveBackground({ colors }: { colors: AppPalette }) {
+  const asset =
+    colors.mode === "light"
+      ? require("../../../assets/nova-light-wave-loop.mp4")
+      : require("../../../assets/nova-particle-loop.mp4");
   const player = useVideoPlayer(
-    require("../../../assets/nova-particle-loop.mp4"),
+    asset,
     (instance) => {
       instance.loop = true;
       instance.muted = true;
@@ -32,5 +36,5 @@ const styles = StyleSheet.create({
     left: 0,
     opacity: 0.9,
   },
-  light: { opacity: 0.58 },
+  light: { opacity: 1 },
 });
